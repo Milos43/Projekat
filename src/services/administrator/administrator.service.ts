@@ -5,6 +5,8 @@ import { Repository } from 'typeorm';
 import { AddAdministratorDto } from 'src/dtos/administrator/add.administrator.dto';
 import * as crypto from "crypto";
 import { EditAdministratorDto } from 'src/dtos/edit.administrator.dto';
+import { ApiResponse } from 'src/misc/api.response.class';
+import { resolve } from 'dns';
 
 @Injectable()
 export class AdministratorService {
@@ -26,7 +28,7 @@ export class AdministratorService {
     /* add() Prihvata sve podatke koji su potrebni da se napravi novi
     zapis u bazi*/
 
-    add(data: AddAdministratorDto): Promise<Administrator> {
+    add(data: AddAdministratorDto): Promise<Administrator | ApiResponse> {
 
         //Pravimo transformaciju iz DTO u Model
         //username prelazi u username
@@ -46,12 +48,29 @@ export class AdministratorService {
         newAdmin.passwordHash = passwordHashString;
 
 
-        return this.administrator.save(newAdmin);
+        // ako napravimo usera koji vec postoji, dobijamo error kod -1001
+        return new Promise((resolve) => {
+            this.administrator.save(newAdmin)
+                .then(data => resolve(data))
+                .catch(error => {
+                    const response: ApiResponse = new ApiResponse("error", -1001);
+                    resolve(response);
+                });
+
+        });
 
     }
 
-    async editById(id: number, data: EditAdministratorDto): Promise<Administrator> {
+    async editById(id: number, data: EditAdministratorDto): Promise<Administrator | ApiResponse >{
         let admin: Administrator = await this.administrator.findOne(id);
+
+
+        // ako menjamo pass nepostojecem adminu, vrati error -1002
+        if (admin === undefined){
+            return new Promise((resolve) => {
+                resolve(new ApiResponse("error", -1002));
+            });
+        }
 
         const crypto = require('crypto');
         const passwordHash = crypto.createHash('sha512');
