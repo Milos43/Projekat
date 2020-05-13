@@ -6,6 +6,8 @@ import {
   ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
+  ManyToMany,
+  JoinTable,
 } from "typeorm";
 import { Category } from "./category.entity";
 import { ArticleFeature } from "./article-feature.entity";
@@ -13,6 +15,8 @@ import { Manufacturer } from "./manufacturer.entity";
 import { Material } from "./material.entity";
 import { CartArticle } from "./cart-article.entity";
 import { Photo } from "./photo.entity";
+import { type } from "os";
+import { Feature } from "./feature.entity";
 
 @Index("fk_article_category_id", ["categoryId"], {})
 @Index("fk_article_manufacturer_id", ["manufacturerId"], {})
@@ -72,6 +76,23 @@ export class Article {
 
   @OneToMany(() => ArticleFeature, (articleFeature) => articleFeature.article)
   articleFeatures: ArticleFeature[];
+
+
+
+
+
+  //pravimo relaciju many to many
+  @ManyToMany(type => Feature, feature => feature.article)
+  @JoinTable({
+    name: "article_feature",
+    joinColumn: { name: "article_id", referencedColumnName: "articleId" },
+    inverseJoinColumn: { name: "feature_id", referencedColumnName: "featureId" }
+  })
+  features: Feature[];
+
+
+
+
 
   @ManyToOne(() => Manufacturer, (manufacturer) => manufacturer.articles, {
     onDelete: "NO ACTION",

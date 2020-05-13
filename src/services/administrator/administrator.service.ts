@@ -61,18 +61,17 @@ export class AdministratorService {
 
     }
 
-    async editById(id: number, data: EditAdministratorDto): Promise<Administrator | ApiResponse >{
+    async editById(id: number, data: EditAdministratorDto): Promise<Administrator | ApiResponse> {
         let admin: Administrator = await this.administrator.findOne(id);
 
 
         // ako menjamo pass nepostojecem adminu, vrati error -1002
-        if (admin === undefined){
+        if (admin === undefined) {
             return new Promise((resolve) => {
                 resolve(new ApiResponse("error", -1002));
             });
         }
 
-        const crypto = require('crypto');
         const passwordHash = crypto.createHash('sha512');
         passwordHash.update(data.password);
         const passwordHashString = passwordHash.digest('hex').toUpperCase();
