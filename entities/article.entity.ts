@@ -59,7 +59,7 @@ export class Article {
     scale: 2,
     default: () => "'0.00'",
   })
-  price: string;
+  price: Number;
 
   @Column("timestamp", {
     name: "created_at",
