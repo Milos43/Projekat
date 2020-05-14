@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
 import { AppController } from './controllers/app.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DatabaseConfiguration } from 'config/database.configuration';
@@ -20,6 +20,8 @@ import { CategoryController } from './controllers/api/category.controller';
 import { CategoryService } from './services/category/category.service';
 import { ArticleService } from './services/article/article.service';
 import { ArticleController } from './controllers/api/article.controller';
+import { AuthController } from './controllers/api/auth.controller';
+import { AuthMiddleware } from './middlewares/auth.middleware';
 
 
 
@@ -60,12 +62,36 @@ import { ArticleController } from './controllers/api/article.controller';
     AppController,
     AdministratorController,
     CategoryController,
-    ArticleController
+    ArticleController,
+    AuthController
   ],
   providers: [
     AdministratorService,
     CategoryService,
     ArticleService
   ],
+
+  exports: [
+    AdministratorService // export-ujemo administrator servis, da bi bio dostupan i van tog modula
+    // auth middleware koristi AdministratorService, sto znaci da admin servis mora biti stavljen kao exportovani resurs
+  ]
 })
-export class AppModule { }
+
+/*
+Nest modul interfejs zahteva da imamo implementaciju nekog odredjenog metoda,
+taj metod se zove "configure". Automatski ga importujemo
+
+Consumer treba da primeni oredjeni middleware
+*/
+export class AppModule implements NestModule {
+  configure(consumer: MiddlewareConsumer) {
+
+    consumer
+      .apply(AuthMiddleware) // primeni, da li postoji middleware za proveru da li postoji token
+      // sve sto je u "auth" ruti treba da bude ignorisano, jer kada bi trazili token za login, nikada ga nebi dobili
+      .exclude('auth/*')
+      .forRoutes('api/*') // ovo je ono sto hocemo da include-ujemo, obavezno koriscenje tokena
+
+  }
+
+}

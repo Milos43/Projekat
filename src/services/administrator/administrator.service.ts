@@ -20,6 +20,25 @@ export class AdministratorService {
         return this.administrator.find();
     }
 
+
+
+    async getByUsername(username: string): Promise<Administrator | null> {
+
+        const admin = await this.administrator.findOne({
+            username: username
+        });
+
+        if (admin) {
+            return admin;
+        }
+        return null;
+
+    }
+
+
+
+
+
     getById(id: number): Promise<Administrator> {
 
         return this.administrator.findOne(id);
@@ -34,10 +53,9 @@ export class AdministratorService {
         //username prelazi u username
         //password prelazi u password hash (SHA 512)
 
-        
+
         const passwordHash = crypto.createHash('sha512');
         passwordHash.update(data.password);
-
         const passwordHashString = passwordHash.digest('hex').toUpperCase();
 
         // napravili smo novi primerak admina da bi ga save-ovali
