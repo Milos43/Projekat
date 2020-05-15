@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Param, UseInterceptors, UploadedFile } from "@nestjs/common";
+import { Controller, Post, Body, Param, UseInterceptors, UploadedFile, Req } from "@nestjs/common";
 import { Crud } from "@nestjsx/crud";
 import { ArticleService } from "src/services/article/article.service";
 import { Article } from "entities/article.entity";
@@ -123,15 +123,17 @@ export class ArticleController {
             fileFilter: (req, file, callback) => {
 
 
-                if (!file.originalname.toLowerCase().match(/\.(jpg|png)$/)) { // proveravamo ekstenziju
-                    callback(new Error('Bad file extensions!'), false);
+                if (!file.originalname.toLowerCase().match(/\.(jpg||png)$/)) { // proveravamo ekstenziju
+                    req.fileFilterError = 'Bad file extension!'
+                    callback(null, false);
                     return;
                 }
 
 
 
                 if (!(file.mimetype.includes('jpeg') || file.mimetype.includes('png'))) { // proveravamo tip fajla
-                    callback(new Error('Bad file content!'), false);
+                    req.fileFilterError = 'Bad file content!'
+                    callback(null, false);
                     return;
                 }
 
@@ -142,12 +144,27 @@ export class ArticleController {
             // limiti - 1 fajl i taj fajl je maximum 3MB
             limits: {
                 files: 1,
-                fieldSize: StorageConfig.photoMaxFileSize
+                fileSize: StorageConfig.photoMaxFileSize
             }
 
         })
     )
-    async uploadPhoto(@Param('id') articleId: number, @UploadedFile() photo): Promise<ApiResponse | Photo> {
+    async uploadPhoto(
+        @Param('id') articleId: number,
+        @UploadedFile() photo,
+        @Req() req): Promise<ApiResponse | Photo> {
+
+        /* ove izuzetke pravimo da bi korisnik imao uvid u to gde je
+           nastala greska. Jer u suprotnom, greska bi bila prikazana
+           samo u konzoli servera, a korisniku bi bio prikazan error 500
+        */
+        if (req.fileFilterError) {
+            return new ApiResponse('error', -4002, req.fileFilterError);
+        }
+
+        if (!photo) {
+            return new ApiResponse('error', -4002, 'File not uploaded!');
+        }
 
 
         const newPhoto: Photo = new Photo();
