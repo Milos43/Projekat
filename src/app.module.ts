@@ -22,6 +22,7 @@ import { ArticleService } from './services/article/article.service';
 import { ArticleController } from './controllers/api/article.controller';
 import { AuthController } from './controllers/api/auth.controller';
 import { AuthMiddleware } from './middlewares/auth.middleware';
+import { PhotoService } from './services/photo/photo.service';
 
 
 
@@ -53,9 +54,17 @@ import { AuthMiddleware } from './middlewares/auth.middleware';
     // repozitorijumi
     TypeOrmModule.forFeature([
       Administrator,
-      Category,
+      ArticleFeature,
       Article,
-      ArticleFeature
+      CartArticle,
+      Cart,
+      Category,
+      Feature,
+      Manufacturer,
+      Material,
+      Order,
+      Photo,
+      User
     ])
   ],
   controllers: [
@@ -68,7 +77,8 @@ import { AuthMiddleware } from './middlewares/auth.middleware';
   providers: [
     AdministratorService,
     CategoryService,
-    ArticleService
+    ArticleService,
+    PhotoService
   ],
 
   exports: [
