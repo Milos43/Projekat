@@ -21,13 +21,27 @@ export class AuthMiddleware implements NestMiddleware {
 
         // u postman-u imamo "barer razmak pa token" mi taj razmak moramo da preskocimo, tome sluzi ovaj kod
         const tokenParts = token.split(' '); // razdvajamo token oko simbola "razmak"
-        if (tokenParts.length !== 2){
+        if (tokenParts.length !== 2) {
             throw new HttpException('Bad token found', HttpStatus.UNAUTHORIZED);
         }
 
         const tokenString = tokenParts[1]; // iz tokenParts, uzimamo drugi po redu
 
-        const jwtData: JwtDataAdministratorDto = jwt.verify(tokenString, jwtSecret);
+        let jwtData: JwtDataAdministratorDto; // deklarisemo jwt data
+
+        // generisemo jwtData verifikovanjem tokena
+        
+        /*
+        Pokusavamo da dostavimo jwtData, ako dodje do bilo kog izuzetka,
+        odmah odgovaramo da token nije pronadjen (token je u stvari pronadjen, ali nije validan).
+        Iz sigurnosnih razloga vracamo da token nije pronadjen, umesto da je
+        token pronadjen, ali nije ispravan.
+        */
+        try {
+            jwtData = jwt.verify(tokenString, jwtSecret);
+        } catch (e) {
+            throw new HttpException('Bad token found', HttpStatus.UNAUTHORIZED);
+        }
 
         if (!jwtData) {
             throw new HttpException('Bad token found', HttpStatus.UNAUTHORIZED);
@@ -63,7 +77,7 @@ export class AuthMiddleware implements NestMiddleware {
         znaci da je u proslosti, ako je u proslosti znaci da imamo
         istekli token i dajemo status UNAUTHORIZED
         */
-        if (tranutniTimestamp >= jwtData.ext) {
+        if (tranutniTimestamp >= jwtData.exp) {
             throw new HttpException('The token has expired', HttpStatus.UNAUTHORIZED)
         }
 
