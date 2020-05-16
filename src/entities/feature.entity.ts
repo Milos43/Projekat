@@ -26,7 +26,10 @@ export class Feature {
   @Column("int", { name: "category_id", unsigned: true, default: () => "'0'" })
   categoryId: number;
 
-  @OneToMany(() => ArticleFeature, (articleFeature) => articleFeature.feature)
+  @OneToMany(
+    () => ArticleFeature,
+    articleFeature => articleFeature.feature
+  )
   articleFeatures: ArticleFeature[];
 
 
@@ -38,15 +41,16 @@ export class Feature {
     joinColumn: { name: "feature_id", referencedColumnName: "featureId" },
     inverseJoinColumn: { name: "article_id", referencedColumnName: "articleId" }
   })
-  article: Article[];
+  articles: Article[];
 
 
 
 
-  @ManyToOne(() => Category, (category) => category.features, {
-    onDelete: "NO ACTION",
-    onUpdate: "CASCADE",
-  })
+  @ManyToOne(
+    () => Category,
+    category => category.features,
+    { onDelete: "NO ACTION", onUpdate: "CASCADE", }
+  )
   @JoinColumn([{ name: "category_id", referencedColumnName: "categoryId" }])
   category: Category;
 }

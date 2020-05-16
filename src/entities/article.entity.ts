@@ -82,7 +82,7 @@ export class Article {
 
 
   //pravimo relaciju many to many
-  @ManyToMany(type => Feature, feature => feature.article)
+  @ManyToMany(type => Feature, feature => feature.articles)
   @JoinTable({
     name: "article_feature",
     joinColumn: { name: "article_id", referencedColumnName: "articleId" },
