@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Param, UseInterceptors, UploadedFile, Req } from "@nestjs/common";
+import { Controller, Post, Body, Param, UseInterceptors, UploadedFile, Req, Delete } from "@nestjs/common";
 import { Crud } from "@nestjsx/crud";
 import { ArticleService } from "src/services/article/article.service";
 import { Article } from "src/entities/article.entity";
@@ -12,6 +12,7 @@ import { ApiResponse } from "src/misc/api.response.class";
 import * as fileType from 'file-type'
 import * as fs from 'fs';
 import * as sharp from 'sharp';
+import { async } from "rxjs/internal/scheduler/async";
 
 
 @Controller('api/article')
@@ -227,4 +228,55 @@ export class ArticleController {
             .toFile(destinationFilePath);
 
     }
+
+    // Brisanje fotografije
+
+    // http"//localhost:3000/api/article/1/deletePhoto/3/
+    @Delete(':articleId/deletePhoto/:photoId')
+    public async deletePhoto(
+        @Param('articleId') articleId: number,
+        @Param('photoId') photoId: number
+    ) {
+
+        // zahtevamo fotografiju iz servisa za fotografije.
+        // pronalazimo jedan element koji ima odredjene definisane kriterijume
+        const photo = await this.photoService.findOne({
+            articleId: articleId,
+            photoId: photoId
+        });
+
+        if (!photo) {
+            return new ApiResponse('error', -4004, 'Photo not found!');
+        }
+
+        try {
+
+            fs.unlinkSync(StorageConfig.photo.destination + photo.imagePath);
+
+            /* destinacija gde se cuvaju svi fajlovi, pod folder gde se
+            cuvaju thumbnail-ovi, pa onda ime nase fotografije sa "imagePath"
+            */
+            fs.unlinkSync(StorageConfig.photo.destination + StorageConfig.photo.resize.thumb.directory + photo.imagePath);
+
+            fs.unlinkSync(StorageConfig.photo.destination + StorageConfig.photo.resize.small.directory + photo.imagePath);
+        } catch (e) { }
+
+
+        // zahtev za brisanje fotografije iz baze podataka
+        /*
+        deleteResult je funkcija koja u sebi ima informaciju o tome na koliko
+        redova je nas proces brisanja uticao i taj podatak se nalazi u
+        deleteResult.affected
+        */
+        const deleteResult = await this.photoService.deleteById(photoId); // pristupiti photo servisu, pristupiti fuknciji delteByID i obrisati photoId
+
+        // ovo znaci da slike nije ni bilo, jer je affected = 0
+        if (deleteResult.affected === 0) {
+            return new ApiResponse('error', -4004, 'Photo not found!');
+        }
+
+        return new ApiResponse('ok', 0, 'One photo deleted!'); // moze biti obrisana samo jedna fotografija, jer ne postoje 2 fotografije sa istim ID-em
+
+    }
+
 }
