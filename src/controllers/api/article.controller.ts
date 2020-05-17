@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Param, UseInterceptors, UploadedFile, Req, Delete } from "@nestjs/common";
+import { Controller, Post, Body, Param, UseInterceptors, UploadedFile, Req, Delete, Patch } from "@nestjs/common";
 import { Crud } from "@nestjsx/crud";
 import { ArticleService } from "src/services/article/article.service";
 import { Article } from "src/entities/article.entity";
@@ -13,6 +13,7 @@ import * as fileType from 'file-type'
 import * as fs from 'fs';
 import * as sharp from 'sharp';
 import { async } from "rxjs/internal/scheduler/async";
+import { EditArticleDto } from "src/dtos/article/edit.article.dto";
 
 
 @Controller('api/article')
@@ -57,7 +58,20 @@ koji je propisan u Category definiciji
                 eager: true
             }
         }
+    },
+
+    /*
+    medju rutama zelimo da iskljucimo odredjene rute
+    */
+    routes: {
+        /*
+        'updateOneBase' - ne zelimo da automatski implementiramo mehanizam editovanja
+        'replaceOneBase' - ne zelimo da imamo mehanizam sa kojim moze article sa nekim odredjenim ID-em da se edituje
+        'deleteOneBase' - ne dozvoljavamo da deletovanje bude automatski dostupno, vec cemo sami da implementiramo tu funkcionalnost ako nam bude potrebna
+        */
+        exclude: ['updateOneBase', 'replaceOneBase', 'deleteOneBase']
     }
+
 })
 // kada napravimo novi kontroler, moramo ga dodati u app.module.ts
 export class ArticleController {
@@ -71,6 +85,16 @@ export class ArticleController {
         return this.service.createFullArticle(data);
 
     }
+
+
+
+    // sami pravimo mehanizam za editovanje artikla
+    @Patch(':id') // PATCH http://localhost:3000/api/article/6/
+    editFullArticle(@Param('id') id: number, @Body() date: EditArticleDto) {
+        return this.service.editFullArticle(id, date); //id artikla koji se menja, data - artikal sa kojim treba da bude izvrsena promena
+    }
+
+
 
     @Post(':id/uploadPhoto/') // POST http://localhost:3000/api/article/:id/uploadPhoto/
     @UseInterceptors(

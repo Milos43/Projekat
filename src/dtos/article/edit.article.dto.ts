@@ -1,4 +1,4 @@
-export class AddArticleDto {
+export class EditArticleDto {
     name: string;
     categoryId: number;
     shortDescription: string;
@@ -10,5 +10,5 @@ export class AddArticleDto {
     features: {
         featureId: number;
         value: string;
-    }[];
+    }[] | null; // ako se setuje null, ne editujemo featur-e
 }
