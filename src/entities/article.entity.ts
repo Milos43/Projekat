@@ -17,6 +17,7 @@ import { CartArticle } from "./cart-article.entity";
 import { Photo } from "./photo.entity";
 import { type } from "os";
 import { Feature } from "./feature.entity";
+import * as Validator from 'class-validator';
 
 @Index("fk_article_category_id", ["categoryId"], {})
 @Index("fk_article_manufacturer_id", ["manufacturerId"], {})
@@ -26,10 +27,16 @@ export class Article {
   @PrimaryGeneratedColumn({ type: "int", name: "article_id", unsigned: true })
   articleId: number;
 
-  @Column("varchar", { name: "name", length: 128, default: () => "'0'" })
+  @Column("varchar", { name: "name", length: 128 })
+  @Validator.IsNotEmpty()
+  @Validator.IsString()
+  @Validator.Length(5, 128)
   name: string;
 
   @Column("text", { name: "description" })
+  @Validator.IsNotEmpty()
+  @Validator.IsString()
+  @Validator.Length(64, 10000)
   description: string;
 
   @Column("int", {
@@ -44,9 +51,11 @@ export class Article {
 
   @Column("varchar", {
     name: "short_description",
-    length: 255,
-    default: () => "'0'",
+    length: 255
   })
+  @Validator.IsNotEmpty()
+  @Validator.IsString()
+  @Validator.Length(10, 255)
   shortDescription: string;
 
   @Column("int", { name: "material_id", unsigned: true, default: () => "'0'" })
