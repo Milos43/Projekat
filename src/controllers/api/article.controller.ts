@@ -14,6 +14,7 @@ import * as fs from 'fs';
 import * as sharp from 'sharp';
 import { async } from "rxjs/internal/scheduler/async";
 import { EditArticleDto } from "src/dtos/article/edit.article.dto";
+import { ArticleSearchDto } from "src/dtos/article/article.search.dto";
 
 
 @Controller('api/article')
@@ -301,6 +302,12 @@ export class ArticleController {
 
         return new ApiResponse('ok', 0, 'One photo deleted!'); // moze biti obrisana samo jedna fotografija, jer ne postoje 2 fotografije sa istim ID-em
 
+    }
+
+    // search mehanizam
+    @Post('search')
+    async search(@Body() data: ArticleSearchDto): Promise<Article[]> {
+        return await this.service.search(data);
     }
 
 }
