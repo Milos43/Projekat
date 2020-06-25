@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Req } from "@nestjs/common";
+import { Controller, Post, Body, Req, HttpException, HttpStatus } from "@nestjs/common";
 import { AdministratorService } from "src/services/administrator/administrator.service";
 import { LoginAdministratorDto } from "src/dtos/administrator/login.administrator.dto";
 import { ApiResponse } from "src/misc/api.response.class";
@@ -8,6 +8,8 @@ import { LoginInfoAdministratorDto } from "src/dtos/administrator/login.info.adm
 import { JwtDataAdministratorDto } from "src/dtos/administrator/jwt.data.administrator.dto";
 import { Request } from "express";
 import { jwtSecret } from "config/jwt.secret";
+import { JwtRefreshDataAdministratorDto } from "src/dtos/administrator/jwt.refresh.dto";
+import { AdministratorRefreshTokenDto } from "src/dtos/administrator/administrator.refresh.token.dto";
 
 
 @Controller('auth')
@@ -45,16 +47,7 @@ export class AuthController {
         jwtData.administratorId = administrator.administratorId;
         jwtData.username = administrator.username;
 
-        // "sada" -> trenutni datum
-        let sada = new Date();
-        sada.setDate(sada.getDate() + 14);
-
-        /* "sada" konvertujemo u get.Time i taj time koji predstavlja broj
-        milisekundi, delimo sa 1000 da bismo dobili broj sekundi, a to je unix timestamp
-        */
-        const istekTimestamp = sada.getTime() / 1000;
-
-        jwtData.exp = istekTimestamp;
+        jwtData.exp = this.getDatePlus(60 * 5);
 
         jwtData.ip = req.ip.toString();
         jwtData.ua = req.headers["user-agent"];
@@ -69,14 +62,110 @@ export class AuthController {
         // jwtData je payload
         let token: string = jwt.sign(jwtData.toPlainObject(), jwtSecret);
 
+
+        const jwtRefreshDataAdministratorDto = new JwtRefreshDataAdministratorDto();
+        jwtRefreshDataAdministratorDto.administratorId = jwtData.administratorId;
+        jwtRefreshDataAdministratorDto.username = jwtData.username;
+        jwtRefreshDataAdministratorDto.exp = this.getDatePlus(60 * 60 * 24 * 31); // ovoliko sekundi dodajemo na nas datum (31 dan) i to je nas expiery date
+        jwtRefreshDataAdministratorDto.ip = jwtData.ip;
+        jwtRefreshDataAdministratorDto.ua = jwtData.ua;
+
+        let refreshToken: string = jwt.sign(jwtRefreshDataAdministratorDto.toPlainObject(), jwtSecret);
+
         const responseObject = new LoginInfoAdministratorDto(
             administrator.administratorId,
             administrator.username,
-            token
+            token,
+            refreshToken,
+            this.getIsoDate(jwtRefreshDataAdministratorDto.exp)
+        );
+
+        await this.administratorService.addToken(
+            administrator.administratorId,
+            refreshToken,
+            this.getDatabaseDateFormat(this.getIsoDate(jwtRefreshDataAdministratorDto.exp))
         );
 
         return new Promise(resolve => resolve(responseObject));
 
+    }
 
+    // mehanizam refreshovanja tokena
+
+    @Post('administrator/refresh') // http://localhost:3000/auth/administrator/refresh
+    async administratorTokenRefresh(@Req() req: Request, @Body() data: AdministratorRefreshTokenDto): Promise<LoginInfoAdministratorDto | ApiResponse> {
+        const administratorToken = await this.administratorService.getAdministratorToken(data.token);
+
+        if (!administratorToken) {
+            return new ApiResponse("error", -10002, "No such refresh token!")
+        }
+
+        if (administratorToken.isValid === 0) {
+            return new ApiResponse("error", -10003, "The token is no longer valid!")
+        }
+
+        const sada = new Date();
+        const datumIsteka = new Date(administratorToken.expiresAt);
+
+        if (datumIsteka.getTime() < sada.getTime()) {
+            return new ApiResponse("error", -10003, "The token has expired!")
+        }
+
+
+        let jwtRefreshData: JwtRefreshDataAdministratorDto; // deklarisemo jwt data
+
+        try {
+            jwtRefreshData = jwt.verify(data.token, jwtSecret);
+        } catch (e) {
+            throw new HttpException('Bad token found', HttpStatus.UNAUTHORIZED);
+        }
+
+        if (!jwtRefreshData) {
+            throw new HttpException('Bad token found', HttpStatus.UNAUTHORIZED);
+        }
+
+        if (jwtRefreshData.ip !== req.ip.toString()) {
+            throw new HttpException('Bad token found', HttpStatus.UNAUTHORIZED);
+        }
+
+        if (jwtRefreshData.ua !== req.headers["user-agent"]) {
+            throw new HttpException('Bad token found', HttpStatus.UNAUTHORIZED);
+        }
+
+        const jwtData = new JwtDataAdministratorDto();
+        jwtData.administratorId = jwtRefreshData.administratorId;
+        jwtData.username = jwtRefreshData.username;
+        jwtData.exp = this.getDatePlus(60 * 5); // vreme trajanja tokena je 5 minuta
+        jwtData.ip = jwtRefreshData.ip;
+        jwtData.ua = jwtRefreshData.ua;
+
+        let token: string = jwt.sign(jwtData.toPlainObject(), jwtSecret);
+
+        const responseObject = new LoginInfoAdministratorDto(
+            jwtData.administratorId,
+            jwtData.username,
+            token,
+            data.token,
+            this.getIsoDate(jwtRefreshData.exp)
+        );
+
+        return responseObject;
+    }
+
+
+
+    private getDatePlus(numberOfSeconds: number): number {
+        return new Date().getTime() / 1000 + numberOfSeconds;
+    }
+
+    private getIsoDate(timestamp: number): string {
+        const date = new Date();
+        date.setTime(timestamp * 1000);
+        return date.toISOString();
+    }
+
+    // moramo da prepravimo iso format datuma, tako da moze da se koristi u bazi podataka
+    private getDatabaseDateFormat(isoFormat: string): string {
+        return isoFormat.substr(0, 19).replace('T', ' ');
     }
 }

@@ -25,6 +25,7 @@ import { AuthMiddleware } from './middlewares/auth.middleware';
 import { PhotoService } from './services/photo/photo.service';
 import { FeatureService } from './services/feature/feature.service';
 import { FeatureController } from './controllers/api/feature.controller';
+import { AdministratorToken } from './entities/administrator-token.entity';
 
 
 
@@ -49,7 +50,8 @@ import { FeatureController } from './controllers/api/feature.controller';
         Material,
         Order,
         Photo,
-        User
+        User,
+        AdministratorToken
       ]
     }),
 
@@ -66,7 +68,8 @@ import { FeatureController } from './controllers/api/feature.controller';
       Material,
       Order,
       Photo,
-      User
+      User,
+      AdministratorToken
     ])
   ],
   controllers: [
