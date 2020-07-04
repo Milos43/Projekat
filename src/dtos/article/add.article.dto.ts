@@ -1,6 +1,6 @@
 import * as Validator from 'class-validator';
 import { ArticleFeatureComponentDto } from './article.feature.component.dto';
-import { isArray } from 'util';
+
 
 
 export class AddArticleDto {

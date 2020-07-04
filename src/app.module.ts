@@ -1,4 +1,4 @@
-import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
+import { Module, NestModule, MiddlewareConsumer, RequestMethod } from '@nestjs/common';
 import { AppController } from './controllers/app.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DatabaseConfiguration } from 'config/database.configuration';
@@ -107,7 +107,13 @@ export class AppModule implements NestModule {
       .apply(AuthMiddleware) // primeni, da li postoji middleware za proveru da li postoji token
       // sve sto je u "auth" ruti treba da bude ignorisano, jer kada bi trazili token za login, nikada ga nebi dobili
       .exclude('auth/*')
-      .forRoutes('api/*') // ovo je ono sto hocemo da include-ujemo, obavezno koriscenje tokena
+      .forRoutes(
+        { path: 'api/*', method: RequestMethod.POST },
+        { path: 'api/*', method: RequestMethod.PATCH },
+        { path: 'api/*', method: RequestMethod.PUT },
+        { path: 'api/*', method: RequestMethod.DELETE },
+      ) // ovo je ono sto hocemo da include-ujemo, obavezno koriscenje tokena
+    // za GET metod ne trazimo token, jer onda posetioci nebi mogli da ga koriste
 
   }
 

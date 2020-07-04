@@ -36,6 +36,15 @@ export class Category {
   @Validator.Length(1, 128)
   imagePath: string;
 
+  @Column({
+    type: "varchar",
+    length: 128
+  })
+  @Validator.IsNotEmpty()
+  @Validator.IsString()
+  @Validator.Length(15, 50)
+  description: string;
+
   @OneToMany(() => Article, (article) => article.category)
   articles: Article[];
 
