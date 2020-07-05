@@ -58,7 +58,8 @@ export class ArticleService extends TypeOrmCrudService<Article>{
                 "articleFeatures",
                 "features",
                 "manufacturer",
-                "material"
+                "material",
+                
 
             ]
         });
@@ -112,23 +113,34 @@ export class ArticleService extends TypeOrmCrudService<Article>{
                 "articleFeatures",
                 "features",
                 "manufacturer",
-                "material"
-
+                "material",
+                "photos",
             ]
         });
 
     }
 
-    async search(data: ArticleSearchDto): Promise<Article[]> {
+    async search(data: ArticleSearchDto): Promise<Article[] | ApiResponse> {
         const builder = await this.article.createQueryBuilder("article");
 
 
         builder.leftJoinAndSelect("article.articleFeatures", "af");
 
+        builder.leftJoinAndSelect("article.features", "features");
+        
+        builder.leftJoinAndSelect("article.photos", "photos");
+
+        
         builder.where('article.categoryId = :catId', { catId: data.categoryId });
 
+        
+
         if (data.keywords && data.keywords.length > 0) {
-            builder.andWhere(`article.name LIKE :kw OR article.shortDescription LIKE :kw OR article.description LIKE :kw`, { kw: '%' + data.keywords.trim() + '%' });
+            builder.andWhere(`(
+                article.name LIKE :kw OR
+                article.shortDescription LIKE :kw
+                OR article.description LIKE :kw)`,
+                { kw: '%' + data.keywords.trim() + '%' });
         }
 
         if (data.priceMin && typeof data.priceMin === 'number') {
@@ -150,7 +162,7 @@ export class ArticleService extends TypeOrmCrudService<Article>{
             }
         }
 
-        let orderBy = 'article.name';
+        let orderBy = 'article.price' ||'article.name';
 
         let orderDirection: 'ASC' | 'DESC' = 'ASC';
 
@@ -179,18 +191,21 @@ export class ArticleService extends TypeOrmCrudService<Article>{
         if (data.page && typeof data.page === 'number') {
             page = data.page;
         }
+        if (data.itemsPerPage && typeof data.itemsPerPage === 'number') {
+            perPage = data.itemsPerPage;
+        }
+
         builder.skip(page * perPage);
         builder.take(perPage)
 
-        let items = await builder.getMany();
+        //let articles = await builder.getMany();
 
-        return items;
-
-
-
-        /* OVO NIJE RADILO KAKO TREBA
-            
+              
         let articleIds =  await(await builder.getMany()).map(article => article.articleId);
+
+        if (articleIds.length === 0) {
+            return new ApiResponse("ok", 0, "No articles found");
+        }
 
         return await this.article.find({
             where: { articleId: In(articleIds) },
@@ -199,10 +214,11 @@ export class ArticleService extends TypeOrmCrudService<Article>{
                 "articleFeatures",
                 "features",
                 "manufacturer",
-                "material"
+                "material",
+                "photos",
             ]
         });
-        */
+        
 
 
 

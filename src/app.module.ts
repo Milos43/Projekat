@@ -106,7 +106,7 @@ export class AppModule implements NestModule {
     consumer
       .apply(AuthMiddleware) // primeni, da li postoji middleware za proveru da li postoji token
       // sve sto je u "auth" ruti treba da bude ignorisano, jer kada bi trazili token za login, nikada ga nebi dobili
-      .exclude('auth/*')
+      .exclude('auth/*', 'api/article/search')
       .forRoutes(
         { path: 'api/*', method: RequestMethod.POST },
         { path: 'api/*', method: RequestMethod.PATCH },
