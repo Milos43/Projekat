@@ -59,7 +59,7 @@ export class ArticleService extends TypeOrmCrudService<Article>{
                 "features",
                 "manufacturer",
                 "material",
-                
+
 
             ]
         });
@@ -123,17 +123,15 @@ export class ArticleService extends TypeOrmCrudService<Article>{
     async search(data: ArticleSearchDto): Promise<Article[] | ApiResponse> {
         const builder = await this.article.createQueryBuilder("article");
 
-
-        builder.leftJoinAndSelect("article.articleFeatures", "af");
-
-        builder.leftJoinAndSelect("article.features", "features");
         
+        builder.leftJoinAndSelect("article.articleFeatures", "af");
+        builder.leftJoinAndSelect("article.features", "features");
         builder.leftJoinAndSelect("article.photos", "photos");
 
-        
+
         builder.where('article.categoryId = :catId', { catId: data.categoryId });
 
-        
+
 
         if (data.keywords && data.keywords.length > 0) {
             builder.andWhere(`(
@@ -162,22 +160,22 @@ export class ArticleService extends TypeOrmCrudService<Article>{
             }
         }
 
-        let orderBy = 'article.price' ||'article.name';
+        let orderBy = 'article.name';
 
         let orderDirection: 'ASC' | 'DESC' = 'ASC';
 
         if (data.orderBy) {
             orderBy = data.orderBy;
-        }
 
-        if (orderBy === 'price') {
-            orderBy = 'article.price';
-        }
+            if (orderBy === 'price') {
+                orderBy = 'article.price';
+            }
 
-        if (orderBy === 'name') {
-            orderBy = 'article.name';
-        }
+            if (orderBy === 'name') {
+                orderBy = 'article.name';
+            }
 
+        }
 
         if (data.orderDirection) {
             orderDirection = data.orderDirection;
@@ -198,29 +196,11 @@ export class ArticleService extends TypeOrmCrudService<Article>{
         builder.skip(page * perPage);
         builder.take(perPage)
 
-        //let articles = await builder.getMany();
+        let articles = await builder.getMany();
 
-              
-        let articleIds =  await(await builder.getMany()).map(article => article.articleId);
-
-        if (articleIds.length === 0) {
+        if (articles.length === 0) {
             return new ApiResponse("ok", 0, "No articles found");
         }
-
-        return await this.article.find({
-            where: { articleId: In(articleIds) },
-            relations: [
-                "category",
-                "articleFeatures",
-                "features",
-                "manufacturer",
-                "material",
-                "photos",
-            ]
-        });
-        
-
-
-
+        return articles;
     }
 }
