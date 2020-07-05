@@ -1,7 +1,8 @@
-import { Controller } from "@nestjs/common";
+import { Controller, Get, Param } from "@nestjs/common";
 import { Crud } from "@nestjsx/crud";
 import { Feature } from "src/entities/feature.entity";
 import { FeatureService } from "src/services/feature/feature.service";
+import DistinctFeatureValuesDto from "src/dtos/feature/distinct.feature.values.dto";
 
 @Controller('api/feature')
 
@@ -43,4 +44,8 @@ export class FeatureController {
 
     constructor(public service: FeatureService) { }
 
+    @Get('values/:categoryId')
+    async getDistinctValuesByCategoryId(@Param('categoryId') categoryId: number): Promise<DistinctFeatureValuesDto> {
+        return await this.service.getDistinctValuesByCategoryId(categoryId);
+    }
 }
