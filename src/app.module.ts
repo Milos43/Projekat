@@ -27,6 +27,7 @@ import { FeatureController } from './controllers/api/feature.controller';
 import { AdministratorToken } from './entities/administrator-token.entity';
 import { ApiCartController } from './controllers/api/cart.controller';
 import { CartService } from './services/cart/cart.service';
+import { OrderService } from './services/order/order.service';
 
 
 
@@ -86,7 +87,8 @@ import { CartService } from './services/cart/cart.service';
     ArticleService,
     PhotoService,
     FeatureService,
-    CartService
+    CartService,
+    OrderService
   ],
 
   exports: [
