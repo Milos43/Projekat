@@ -14,7 +14,6 @@ import { Manufacturer } from 'src/entities/manufacturer.entity';
 import { Material } from 'src/entities/material.entity';
 import { Order } from 'src/entities/order.entity';
 import { Photo } from 'src/entities/photo.entity';
-import { User } from 'src/entities/user.entity';
 import { AdministratorController } from './controllers/api/administrator.controller';
 import { CategoryController } from './controllers/api/category.controller';
 import { CategoryService } from './services/category/category.service';
@@ -26,6 +25,8 @@ import { PhotoService } from './services/photo/photo.service';
 import { FeatureService } from './services/feature/feature.service';
 import { FeatureController } from './controllers/api/feature.controller';
 import { AdministratorToken } from './entities/administrator-token.entity';
+import { ApiCartController } from './controllers/api/cart.controller';
+import { CartService } from './services/cart/cart.service';
 
 
 
@@ -50,7 +51,6 @@ import { AdministratorToken } from './entities/administrator-token.entity';
         Material,
         Order,
         Photo,
-        User,
         AdministratorToken
       ]
     }),
@@ -68,7 +68,6 @@ import { AdministratorToken } from './entities/administrator-token.entity';
       Material,
       Order,
       Photo,
-      User,
       AdministratorToken
     ])
   ],
@@ -78,14 +77,16 @@ import { AdministratorToken } from './entities/administrator-token.entity';
     CategoryController,
     ArticleController,
     AuthController,
-    FeatureController
+    FeatureController,
+    ApiCartController
   ],
   providers: [
     AdministratorService,
     CategoryService,
     ArticleService,
     PhotoService,
-    FeatureService
+    FeatureService,
+    CartService
   ],
 
   exports: [
@@ -106,7 +107,7 @@ export class AppModule implements NestModule {
     consumer
       .apply(AuthMiddleware) // primeni, da li postoji middleware za proveru da li postoji token
       // sve sto je u "auth" ruti treba da bude ignorisano, jer kada bi trazili token za login, nikada ga nebi dobili
-      .exclude('auth/*', 'api/article/search')
+      .exclude('auth/*', 'api/article/search', 'cart/*')
       .forRoutes(
         { path: 'api/*', method: RequestMethod.POST },
         { path: 'api/*', method: RequestMethod.PATCH },

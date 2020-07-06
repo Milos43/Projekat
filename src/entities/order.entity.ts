@@ -24,7 +24,6 @@ export class Order {
     name: "cart_id",
     unique: true,
     unsigned: true,
-    default: () => "'0'",
   })
   cartId: number;
 
