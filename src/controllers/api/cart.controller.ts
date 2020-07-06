@@ -7,12 +7,14 @@ import { EditArticleInCartDto } from "src/dtos/cart/edit.article.in.cart.dto";
 import { OrderService } from "src/services/order/order.service";
 import { Order } from "src/entities/order.entity";
 import { orderDto } from "src/dtos/order/order.dto";
+import { OrderMailer } from "src/services/order/order.mailer.service";
 
 @Controller('cart')
 export class ApiCartController {
     constructor(
         private cartService: CartService,
-        private orderService: OrderService
+        private orderService: OrderService,
+        private orderMailer: OrderMailer,
     ) { }
 
     private async getActiveCartByCartId(cartId: number): Promise<Cart> {
@@ -51,23 +53,24 @@ export class ApiCartController {
     }
 
     @Post('makeOrder')
-    async makeOrder(@Body()data:orderDto, cartId: number): Promise<Order | ApiResponse> {
+    async makeOrder(@Body() data: orderDto, cartId: number): Promise<Order | ApiResponse> {
 
         const cart = await this.getCartByCartId(cartId);
 
         const order = await this.orderService.add(cart.cartId, data);
 
-
         if (order instanceof ApiResponse) {
             return order;
         }
+
+        await this.orderMailer.sendOrderEmail(order);
 
         return order;
     }
 
     @Get('orders')
     async getOrders(orderId: number): Promise<Order> {
-        
+
         return await this.orderService.getById(orderId);
     }
 }
