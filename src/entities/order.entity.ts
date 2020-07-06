@@ -7,6 +7,7 @@ import {
   PrimaryGeneratedColumn,
 } from "typeorm";
 import { Cart } from "./cart.entity";
+import * as Validator from 'class-validator';
 
 @Index("uq_order_cart_id", ["cartId"], { unique: true })
 @Entity("order", { schema: "aplikacija" })
@@ -26,6 +27,33 @@ export class Order {
     unsigned: true,
   })
   cartId: number;
+
+  @Column({
+    type: "varchar",
+    length: 128
+  })
+  @Validator.IsNotEmpty()
+  @Validator.IsString()
+  @Validator.Length(3,128)
+  name: string;
+
+  @Column({
+    type: "varchar",
+    length: 128
+  })
+  @Validator.IsNotEmpty()
+  @Validator.IsString()
+  @Validator.Length(3,128)
+  surname: string;
+
+  @Column({
+    type: "varchar",
+    length: 128
+  })
+  @Validator.IsNotEmpty()
+  @Validator.IsString()
+  @Validator.Length(3,128)
+  email: string;
 
   @OneToOne(() => Cart, (cart) => cart.order, {
     onDelete: "NO ACTION",

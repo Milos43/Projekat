@@ -3,8 +3,8 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { Cart } from "src/entities/cart.entity";
 import { Order } from "src/entities/order.entity";
 import { Repository } from "typeorm";
-import { Article } from "src/entities/article.entity";
 import { ApiResponse } from "src/misc/api.response.class";
+import { orderDto } from "src/dtos/order/order.dto";
 
 @Injectable()
 export class OrderService {
@@ -12,7 +12,7 @@ export class OrderService {
         @InjectRepository(Order) private order: Repository<Order>,
     ) { }
 
-    async add(cartId: number): Promise<Order | ApiResponse> {
+    async add(cartId: number, data: orderDto): Promise<Order | ApiResponse> {
         const order = await this.order.findOne({
             cartId: cartId
         });
@@ -37,6 +37,11 @@ export class OrderService {
 
         const newOrder: Order = new Order();
         newOrder.cartId = cartId;
+
+        newOrder.name = data.name;
+        newOrder.surname = data.surname;
+        newOrder.email = data.email;
+
         const savedOrder = await this.order.save(newOrder);
 
         cart.createdAt = new Date();
@@ -48,6 +53,9 @@ export class OrderService {
 
     async getById(orderId: number) {
         return await this.order.findOne(orderId, {
+            order: {
+                createdAt: "DESC",
+            },
             relations: [
                 "cart",
                 "cart.cartArticles",
