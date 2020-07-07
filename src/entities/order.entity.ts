@@ -55,6 +55,17 @@ export class Order {
   @Validator.Length(3,128)
   email: string;
 
+  @Column({
+    type: "varchar",
+    length: 128
+  })
+  @Validator.IsNotEmpty()
+  @Validator.IsString()
+  @Validator.Length(3,128)
+  address: string;
+
+
+
   @OneToOne(() => Cart, (cart) => cart.order, {
     onDelete: "NO ACTION",
     onUpdate: "CASCADE",

@@ -18,4 +18,10 @@ export class orderDto {
         require_tld: true,
     })
     email: string;
+
+    @Validator.IsNotEmpty()
+    @Validator.IsString()
+    @Validator.Length(2, 64)
+    address: string;
+
 }

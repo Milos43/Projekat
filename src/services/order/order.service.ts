@@ -41,6 +41,7 @@ export class OrderService {
         newOrder.name = data.name;
         newOrder.surname = data.surname;
         newOrder.email = data.email;
+        newOrder.address = data.address;
 
         const savedOrder = await this.order.save(newOrder);
 

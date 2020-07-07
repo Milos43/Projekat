@@ -9,15 +9,15 @@ export class OrderMailer {
     constructor(private readonly mailService: MailerService) { }
 
     async sendOrderEmail(order: Order) {
-       
-            await this.mailService.sendMail({
-                to: order.email,
-                bcc: MailConfig.orderNotificationMail,
-                subject: 'Order details',
-                encoding: 'UTF-8',
-                html: this.makeOrderHtml(order),
-            });
-            
+
+        await this.mailService.sendMail({
+            to: order.email,
+            bcc: MailConfig.orderNotificationMail,
+            subject: 'Order details',
+            encoding: 'UTF-8',
+            html: this.makeOrderHtml(order),
+        });
+
 
     }
     private makeOrderHtml(order: Order): string {
@@ -28,7 +28,9 @@ export class OrderMailer {
         }, 0);
 
         return `<p>Zahvaljujemo se za vasu porudzbinu</p>
+        <br/>
         <p>Ovo su detalji vase porudzbine: </p>
+        <br/>
         <ul>
         ${order.cart.cartArticles.map((cartArticle: CartArticle) => {
             return `<li>
@@ -37,8 +39,16 @@ export class OrderMailer {
             </li>`
         }).join("")}
         </ul>
-        <p>Ukupan iznos je: ${suma.toFixed(2)} RSD</p>
-        <p>Potpis...</p>`;
+        <br/>
+        <p>Ukupan iznos je: <b>${suma.toFixed(2)} </b>RSD</p>
+        <br/>
+        <p><b>Podaci za slanje:</b></p>
+        <br/>
+        <p><b>Ime:</b> ${order.name}</p>
+        <p><b>Prezime:</b> ${order.surname}</p>
+        <p><b>Adresa:</b> ${order.address}</p>
+        <br/>
+        <p>Srdačan pozdrav`;
 
     }
 }
