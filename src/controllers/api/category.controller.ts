@@ -1,7 +1,8 @@
-import { Controller } from "@nestjs/common";
+import { Controller, Post, Body, Patch, Param } from "@nestjs/common";
 import { Crud } from "@nestjsx/crud";
 import { Category } from "src/entities/category.entity";
 import { CategoryService } from "src/services/category/category.service";
+import { CategoryDto } from "src/dtos/category/category.dto";
 
 @Controller('api/category')
 
@@ -21,8 +22,6 @@ koji je propisan u Category definiciji
         }
     },
 
-    
-
     query: {
 
         join: {
@@ -31,6 +30,9 @@ koji je propisan u Category definiciji
             },
             articles: {
                 eager: false
+            },
+            categorires: {
+                eager: true
             }
         }
     }
@@ -39,5 +41,22 @@ koji je propisan u Category definiciji
 export class CategoryController {
 
     constructor(public service: CategoryService) { }
+    routes: {
+        only: [
+            "createOneBase",
+            "createManyBase",
+            "updateOneBase",
+            "getManyBase",
+            "getOneBase",
+        ],
+    }
+    @Post()
+    createFullCategory(@Body() data: CategoryDto) {
+        return this.service.createFullCategory(data);
+    }
+    @Patch(':categoryId')
+    async editById(@Param('categoryId') categoryId: number, @Body() data: CategoryDto) {
+        return await this.service.editById(categoryId, data);
+    }
 
 }

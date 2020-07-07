@@ -1,7 +1,7 @@
 export const MailConfig = {
     hostname: 'smtp.gmail.com',
-    username: 'mojEmail@gmail.com',
-    password: 'mojPassword',
+    username: 'email',
+    password: 'pass',
     senderEmail: 'miscevic.milos.97@gmail.com',
     orderNotificationMail: 'miscevic.milos.97@gmail.com'
 }

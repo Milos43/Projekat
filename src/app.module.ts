@@ -120,15 +120,11 @@ export class AppModule implements NestModule {
     consumer
       .apply(AuthMiddleware) // primeni, da li postoji middleware za proveru da li postoji token
       // sve sto je u "auth" ruti treba da bude ignorisano, jer kada bi trazili token za login, nikada ga nebi dobili
-      .exclude('auth/*', 'api/article/search', 'cart/*')
+      .exclude('auth/*', 'api/article/search*', 'cart/*')
       .forRoutes(
-        { path: 'api/*', method: RequestMethod.POST },
-        { path: 'api/*', method: RequestMethod.PATCH },
-        { path: 'api/*', method: RequestMethod.PUT },
-        { path: 'api/*', method: RequestMethod.DELETE },
-      ) // ovo je ono sto hocemo da include-ujemo, obavezno koriscenje tokena
-    // za GET metod ne trazimo token, jer onda posetioci nebi mogli da ga koriste
-
+        'api/administrator/*', 'api/article/createFull',
+        { path: 'api/category*', method: RequestMethod.POST },
+        { path: 'api/category*', method: RequestMethod.PATCH } // ovo je ono sto hocemo da include-ujemo, obavezno koriscenje tokena
+      )
   }
-
 }
