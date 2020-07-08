@@ -122,9 +122,11 @@ export class AppModule implements NestModule {
       // sve sto je u "auth" ruti treba da bude ignorisano, jer kada bi trazili token za login, nikada ga nebi dobili
       .exclude('auth/*', 'api/article/search*', 'cart/*')
       .forRoutes(
-        'api/administrator/*', 'api/article/createFull','api/feature*',
+        'api/administrator/*', 'api/article/createFull',
         { path: 'api/category*', method: RequestMethod.POST },
-        { path: 'api/category*', method: RequestMethod.PATCH }, // ovo je ono sto hocemo da include-ujemo, obavezno koriscenje tokena
+        { path: 'api/category*', method: RequestMethod.PATCH },
+        { path: 'api/feature*', method: RequestMethod.POST },
+        { path: 'api/feature*', method: RequestMethod.PATCH }, // ovo je ono sto hocemo da include-ujemo, obavezno koriscenje tokena
       )
   }
 }
