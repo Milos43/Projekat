@@ -17,16 +17,13 @@ export class EditArticleDto {
 
     @Validator.IsNotEmpty()
     @Validator.IsString()
-    @Validator.Length(64, 10000)
+    @Validator.Length(10, 10000)
     description: string;
 
     @Validator.IsNotEmpty()
     @Validator.IsPositive()
     @Validator.IsNumber()
     price: number;
-
-    manufacturerId: number;
-    materialId: number;
 
     @Validator.IsOptional() // moze a i ne mora biti setovano (moze biti null)
     @Validator.IsArray()

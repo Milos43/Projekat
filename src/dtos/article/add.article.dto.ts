@@ -18,16 +18,13 @@ export class AddArticleDto {
 
     @Validator.IsNotEmpty()
     @Validator.IsString()
-    @Validator.Length(64, 10000)
+    @Validator.Length(10, 10000)
     description: string;
 
     @Validator.IsNotEmpty()
     @Validator.IsPositive()
     @Validator.IsNumber()
     price: number;
-
-    manufacturerId: number;
-    materialId: number;
 
     @Validator.IsArray()
     @Validator.ValidateNested({

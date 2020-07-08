@@ -34,8 +34,6 @@ koji je propisan u Category definiciji
         }
     },
 
-
-
     query: {
 
         join: {
@@ -43,12 +41,6 @@ koji je propisan u Category definiciji
                 eager: true
             },
             photos: {
-                eager: true
-            },
-            manufacturer: {
-                eager: true
-            },
-            material: {
                 eager: true
             },
             articleFeatures: {

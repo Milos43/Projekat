@@ -11,12 +11,13 @@ import * as Validator from 'class-validator';
 
 @Index("uq_photo_image_path", ["imagePath"], { unique: true })
 @Index("fk_photo_article_id", ["articleId"], {})
+
 @Entity("photo", { schema: "aplikacija" })
 export class Photo {
   @PrimaryGeneratedColumn({ type: "int", name: "photo_id", unsigned: true })
   photoId: number;
 
-  @Column("int", { name: "article_id", unsigned: true, default: () => "'0'" })
+  @Column("int", { name: "article_id", unsigned: true})
   articleId: number;
 
   @Column("varchar", {
@@ -29,7 +30,7 @@ export class Photo {
   @Validator.Length(1, 128)
   imagePath: string;
 
-  @ManyToOne(() => Article, (article) => article.photos, {
+  @ManyToOne(() => Article, article => article.photos, {
     onDelete: "NO ACTION",
     onUpdate: "CASCADE",
   })

@@ -10,8 +10,6 @@ import { CartArticle } from 'src/entities/cart-article.entity';
 import { Cart } from 'src/entities/cart.entity';
 import { Category } from 'src/entities/category.entity';
 import { Feature } from 'src/entities/feature.entity';
-import { Manufacturer } from 'src/entities/manufacturer.entity';
-import { Material } from 'src/entities/material.entity';
 import { Order } from 'src/entities/order.entity';
 import { Photo } from 'src/entities/photo.entity';
 import { AdministratorController } from './controllers/api/administrator.controller';
@@ -50,8 +48,6 @@ import { OrderMailer } from './services/order/order.mailer.service';
         Cart,
         Category,
         Feature,
-        Manufacturer,
-        Material,
         Order,
         Photo,
         AdministratorToken
@@ -67,8 +63,6 @@ import { OrderMailer } from './services/order/order.mailer.service';
       Cart,
       Category,
       Feature,
-      Manufacturer,
-      Material,
       Order,
       Photo,
       AdministratorToken
@@ -120,13 +114,15 @@ export class AppModule implements NestModule {
     consumer
       .apply(AuthMiddleware) // primeni, da li postoji middleware za proveru da li postoji token
       // sve sto je u "auth" ruti treba da bude ignorisano, jer kada bi trazili token za login, nikada ga nebi dobili
-      .exclude('auth/*', 'api/article/search*', 'cart/*')
+      .exclude('auth/*', 'api/article/search*', 'cart/*',)
       .forRoutes(
-        'api/administrator/*', 'api/article/createFull',
+        'api/administrator/*',
         { path: 'api/category*', method: RequestMethod.POST },
         { path: 'api/category*', method: RequestMethod.PATCH },
         { path: 'api/feature*', method: RequestMethod.POST },
-        { path: 'api/feature*', method: RequestMethod.PATCH }, // ovo je ono sto hocemo da include-ujemo, obavezno koriscenje tokena
+        { path: 'api/feature*', method: RequestMethod.PATCH },
+        { path: 'api/article*', method: RequestMethod.POST },
+        { path: 'api/article*', method: RequestMethod.PATCH }, // ovo je ono sto hocemo da include-ujemo, obavezno koriscenje tokena
       )
   }
 }

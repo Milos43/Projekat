@@ -35,8 +35,6 @@ export class ArticleService extends TypeOrmCrudService<Article>{
         newArticle.categoryId = data.categoryId;
         newArticle.shortDescription = data.shortDescription;
         newArticle.description = data.description;
-        newArticle.manufacturerId = data.manufacturerId;
-        newArticle.materialId = data.materialId;
         newArticle.price = data.price;
 
         let savedArticle = await this.article.save(newArticle);
@@ -57,10 +55,6 @@ export class ArticleService extends TypeOrmCrudService<Article>{
                 "category",
                 "articleFeatures",
                 "features",
-                "manufacturer",
-                "material",
-
-
             ]
         });
     }
@@ -81,8 +75,6 @@ export class ArticleService extends TypeOrmCrudService<Article>{
         existingArticle.shortDescription = data.shortDescription;
         existingArticle.description = data.description;
         existingArticle.price = data.price;
-        existingArticle.manufacturerId = data.manufacturerId;
-        existingArticle.materialId = data.materialId;
 
         const savedArticle = await this.article.save(existingArticle);
 
@@ -112,8 +104,6 @@ export class ArticleService extends TypeOrmCrudService<Article>{
                 "category",
                 "articleFeatures",
                 "features",
-                "manufacturer",
-                "material",
                 "photos",
             ]
         });

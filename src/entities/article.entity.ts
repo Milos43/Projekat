@@ -11,17 +11,12 @@ import {
 } from "typeorm";
 import { Category } from "./category.entity";
 import { ArticleFeature } from "./article-feature.entity";
-import { Manufacturer } from "./manufacturer.entity";
-import { Material } from "./material.entity";
 import { CartArticle } from "./cart-article.entity";
 import { Photo } from "./photo.entity";
-import { type } from "os";
 import { Feature } from "./feature.entity";
 import * as Validator from 'class-validator';
 
 @Index("fk_article_category_id", ["categoryId"], {})
-@Index("fk_article_manufacturer_id", ["manufacturerId"], {})
-@Index("fk_article_material_id", ["materialId"], {})
 @Entity("article")
 export class Article {
   @PrimaryGeneratedColumn({ type: "int", name: "article_id", unsigned: true })
@@ -36,17 +31,10 @@ export class Article {
   @Column("text", { name: "description" })
   @Validator.IsNotEmpty()
   @Validator.IsString()
-  @Validator.Length(64, 10000)
+  @Validator.Length(10, 10000)
   description: string;
 
-  @Column("int", {
-    name: "manufacturer_id",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  manufacturerId: number;
-
-  @Column("int", { name: "category_id", unsigned: true, default: () => "'0'" })
+  @Column("int", { name: "category_id", unsigned: true })
   categoryId: number;
 
   @Column("varchar", {
@@ -55,11 +43,8 @@ export class Article {
   })
   @Validator.IsNotEmpty()
   @Validator.IsString()
-  @Validator.Length(10, 255)
+  @Validator.Length(5, 255)
   shortDescription: string;
-
-  @Column("int", { name: "material_id", unsigned: true, default: () => "'0'" })
-  materialId: number;
 
   @Column("decimal", {
     name: "price",
@@ -76,19 +61,15 @@ export class Article {
   })
   createdAt: Date;
 
-  @ManyToOne(() => Category, (category) => category.articles, {
+  @ManyToOne(() => Category, category => category.articles, {
     onDelete: "NO ACTION",
     onUpdate: "CASCADE",
   })
   @JoinColumn([{ name: "category_id", referencedColumnName: "categoryId" }])
   category: Category;
 
-  @OneToMany(() => ArticleFeature, (articleFeature) => articleFeature.article)
+  @OneToMany(() => ArticleFeature, articleFeature => articleFeature.article)
   articleFeatures: ArticleFeature[];
-
-
-
-
 
   //pravimo relaciju many to many
   @ManyToMany(type => Feature, feature => feature.articles)
@@ -98,26 +79,6 @@ export class Article {
     inverseJoinColumn: { name: "feature_id", referencedColumnName: "featureId" }
   })
   features: Feature[];
-
-
-
-
-
-  @ManyToOne(() => Manufacturer, (manufacturer) => manufacturer.articles, {
-    onDelete: "NO ACTION",
-    onUpdate: "CASCADE",
-  })
-  @JoinColumn([
-    { name: "manufacturer_id", referencedColumnName: "manufacturerId" },
-  ])
-  manufacturer: Manufacturer;
-
-  @ManyToOne(() => Material, (material) => material.articles, {
-    onDelete: "NO ACTION",
-    onUpdate: "CASCADE",
-  })
-  @JoinColumn([{ name: "material_id", referencedColumnName: "materialId" }])
-  material: Material;
 
   @OneToMany(() => CartArticle, (cartArticle) => cartArticle.article)
   cartArticles: CartArticle[];
