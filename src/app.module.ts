@@ -122,7 +122,10 @@ export class AppModule implements NestModule {
         { path: 'api/feature*', method: RequestMethod.POST },
         { path: 'api/feature*', method: RequestMethod.PATCH },
         { path: 'api/article/createFull/*', method: RequestMethod.POST },
-        { path: 'api/article/createFull/*', method: RequestMethod.PATCH }, // ovo je ono sto hocemo da include-ujemo, obavezno koriscenje tokena
+        { path: 'api/article/createFull/*', method: RequestMethod.PATCH },
+        { path: 'api/article*', method: RequestMethod.DELETE },
+        { path: 'api/article/*/uploadPhoto/', method: RequestMethod.POST },
+        { path: 'api/article*', method: RequestMethod.PATCH }, // ovo je ono sto hocemo da include-ujemo, obavezno koriscenje tokena
       )
   }
 }
