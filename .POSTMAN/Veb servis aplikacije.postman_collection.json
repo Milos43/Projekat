@@ -54,20 +54,24 @@
 									"value": "Express"
 								},
 								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
 									"key": "Content-Type",
 									"value": "application/json; charset=utf-8"
 								},
 								{
 									"key": "Content-Length",
-									"value": "79"
+									"value": "189"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"4f-FjJ+pbz91CStDEfvGmsJe6dpc8g\""
+									"value": "W/\"bd-yPUIVc3JDUWGl7BS0TjaizWQUBs\""
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 12 May 2020 15:29:48 GMT"
+									"value": "Thu, 09 Jul 2020 13:25:01 GMT"
 								},
 								{
 									"key": "Connection",
@@ -75,7 +79,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"administratorId\": 1,\n        \"username\": \"testadmin\",\n        \"passwordHash\": \"asd876789asdghi\"\n    }\n]"
+							"body": "[\n    {\n        \"administratorId\": 11,\n        \"username\": \"milos\",\n        \"passwordHash\": \"F5A43F2FE0B3ED50216666730C105B1FB48E2311201615B7701C2F6A13BD8AA08DC5BED8C6C2C6521DD6994B275E38C0F0120C93CDC1A33ED84386B20C15E774\"\n    }\n]"
 						}
 					]
 				},
@@ -85,7 +89,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/administrator/1/",
+							"raw": "http://localhost:3000/api/administrator/11/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -94,7 +98,7 @@
 							"path": [
 								"api",
 								"administrator",
-								"1",
+								"11",
 								""
 							]
 						}
@@ -106,7 +110,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3000/api/administrator/1/",
+									"raw": "http://localhost:3000/api/administrator/11/",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -115,7 +119,7 @@
 									"path": [
 										"api",
 										"administrator",
-										"1",
+										"11",
 										""
 									]
 								}
@@ -129,20 +133,24 @@
 									"value": "Express"
 								},
 								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
 									"key": "Content-Type",
 									"value": "application/json; charset=utf-8"
 								},
 								{
 									"key": "Content-Length",
-									"value": "77"
+									"value": "187"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"4d-AVsgNIPt7pUQifkyx38XZPs+PPQ\""
+									"value": "W/\"bb-1cpBLeZT2KV7yKAPzZRPky3lzGg\""
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 12 May 2020 15:32:24 GMT"
+									"value": "Thu, 09 Jul 2020 13:29:35 GMT"
 								},
 								{
 									"key": "Connection",
@@ -150,7 +158,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"administratorId\": 1,\n    \"username\": \"testadmin\",\n    \"passwordHash\": \"asd876789asdghi\"\n}"
+							"body": "{\n    \"administratorId\": 11,\n    \"username\": \"milos\",\n    \"passwordHash\": \"F5A43F2FE0B3ED50216666730C105B1FB48E2311201615B7701C2F6A13BD8AA08DC5BED8C6C2C6521DD6994B275E38C0F0120C93CDC1A33ED84386B20C15E774\"\n}"
 						}
 					]
 				},
@@ -195,8 +203,8 @@
 									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
+							"status": "Unauthorized",
+							"code": 401,
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
@@ -204,20 +212,24 @@
 									"value": "Express"
 								},
 								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
 									"key": "Content-Type",
 									"value": "application/json; charset=utf-8"
 								},
 								{
 									"key": "Content-Length",
-									"value": "52"
+									"value": "54"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"34-TohoSz0THfgyH4V7rCdfcfXcq54\""
+									"value": "W/\"36-Eq+JSvN6wkuOvFpgnh0M/oPKfFw\""
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 12 May 2020 16:23:22 GMT"
+									"value": "Thu, 09 Jul 2020 13:25:24 GMT"
 								},
 								{
 									"key": "Connection",
@@ -225,7 +237,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -1002,\n    \"message\": null\n}"
+							"body": "{\n    \"statusCode\": 401,\n    \"message\": \"Administrator not found\"\n}"
 						}
 					]
 				},
@@ -242,7 +254,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"username\": \"pperic2\",\n\t\"password\": \"NekaLozinka2\"\n}"
+							"raw": "{\n\t\"username\": \"milos\",\n\t\"password\": \"miscevic\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/api/administrator",
@@ -259,7 +271,7 @@
 					},
 					"response": [
 						{
-							"name": "Add a new administrator - success",
+							"name": "Add a new administrator",
 							"originalRequest": {
 								"method": "PUT",
 								"header": [
@@ -271,7 +283,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"username\": \"pperic2\",\n\t\"password\": \"NekaLozinka2\"\n}"
+									"raw": "{\n\t\"username\": \"milos\",\n\t\"password\": \"miscevic\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:3000/api/administrator",
@@ -295,64 +307,8 @@
 									"value": "Express"
 								},
 								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "188"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"bc-YJ3J3xjeCRsH1LiIByeFxoRRII8\""
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 12 May 2020 15:37:53 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"username\": \"pperic2\",\n    \"passwordHash\": \"A4FECC298AD1E93D68AED529A7E83B357C5B050CABD304137EEEA48F8E26E42F89C07089D58AE59E64C20686682CE3CE8093593249FE1DCF6E58E0031E0B0C31\",\n    \"administratorId\": 4\n}"
-						},
-						{
-							"name": "Add a new administrator - error - username taken",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"username\": \"mmilic\",\n\t\"password\": \"NekaLozinka222\"\n}"
-								},
-								"url": {
-									"raw": "http://localhost:3000/api/administrator",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"api",
-										"administrator"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
 								},
 								{
 									"key": "Content-Type",
@@ -360,15 +316,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "52"
+									"value": "187"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"34-t4k/9UI9MQaVcBQ68YkMUdFYBok\""
+									"value": "W/\"bb-xt1w/9TW+STdPs+QjTh6bbWMP/A\""
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 12 May 2020 15:59:15 GMT"
+									"value": "Thu, 09 Jul 2020 13:24:30 GMT"
 								},
 								{
 									"key": "Connection",
@@ -376,7 +332,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -1001,\n    \"message\": null\n}"
+							"body": "{\n    \"username\": \"milos\",\n    \"passwordHash\": \"F5A43F2FE0B3ED50216666730C105B1FB48E2311201615B7701C2F6A13BD8AA08DC5BED8C6C2C6521DD6994B275E38C0F0120C93CDC1A33ED84386B20C15E774\",\n    \"administratorId\": 11\n}"
 						}
 					]
 				},
@@ -396,7 +352,7 @@
 							"raw": "{\n\t\"password\": \"NekaNovaLoznikaZaOvogAdmina\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/administrator/1/",
+							"raw": "http://localhost:3000/api/administrator/11/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -405,7 +361,7 @@
 							"path": [
 								"api",
 								"administrator",
-								"1",
+								"11",
 								""
 							]
 						}
@@ -427,7 +383,7 @@
 									"raw": "{\n\t\"password\": \"NekaNovaLoznikaZaOvogAdmina\"\n}"
 								},
 								"url": {
-									"raw": "http://localhost:3000/api/administrator/1/",
+									"raw": "http://localhost:3000/api/administrator/11/",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -436,7 +392,7 @@
 									"path": [
 										"api",
 										"administrator",
-										"1",
+										"11",
 										""
 									]
 								}
@@ -450,20 +406,24 @@
 									"value": "Express"
 								},
 								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
 									"key": "Content-Type",
 									"value": "application/json; charset=utf-8"
 								},
 								{
 									"key": "Content-Length",
-									"value": "190"
+									"value": "187"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"be-taos5o1QYLUuYTlix4SxR7SPxD0\""
+									"value": "W/\"bb-TqH67yoPYXZv+VLH71tItz9wb6E\""
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 12 May 2020 16:12:19 GMT"
+									"value": "Thu, 09 Jul 2020 13:30:09 GMT"
 								},
 								{
 									"key": "Connection",
@@ -471,7 +431,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"administratorId\": 1,\n    \"username\": \"testadmin\",\n    \"passwordHash\": \"BA96544013AC2C830FDD99642EBE46F7320BB60504A105C76DAB0ECB91255DFF1DAB27BEFAE5CA488E3182B89E52509B1CD0C09BC167B16DB3848B9B19EA7C57\"\n}"
+							"body": "{\n    \"administratorId\": 11,\n    \"username\": \"milos\",\n    \"passwordHash\": \"BA96544013AC2C830FDD99642EBE46F7320BB60504A105C76DAB0ECB91255DFF1DAB27BEFAE5CA488E3182B89E52509B1CD0C09BC167B16DB3848B9B19EA7C57\"\n}"
 						}
 					]
 				},
@@ -545,6 +505,10 @@
 									"value": "Express"
 								},
 								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
 									"key": "Content-Type",
 									"value": "application/json; charset=utf-8"
 								},
@@ -558,7 +522,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 12 May 2020 16:17:27 GMT"
+									"value": "Thu, 09 Jul 2020 13:30:38 GMT"
 								},
 								{
 									"key": "Connection",
@@ -599,19 +563,29 @@
 			"name": "Article",
 			"item": [
 				{
-					"name": "POST createFull",
+					"name": "POST create full article",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjExLCJ1c2VybmFtZSI6Im1pbG9zIiwiZXhwIjoxNTk3MTYwNDk3LjY4NSwiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjYuMyIsImlhdCI6MTU5NzE2MDE5N30.oV4-xjIHuG4Gmpn6iOolvZZBrw6gbhNaOjiRBeED9H0",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"type": "text",
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Plava ogrlica\",\r\n    \"categoryId\": 1,\r\n    \"shortDescription\" : \"kratak opis\",\r\n    \"description\": \"dugacak opis\",\r\n    \"price\": 200,\r\n    \"manufacturerId\": 1,\r\n    \"materialId\": 1,\r\n\r\n    \"features\": [\r\n\r\n        {\r\n        \t\"featureId\": 1,\r\n        \t\"value\": \"Zelena\"\r\n        },\r\n        \r\n        {\r\n        \t\"featureId\": 2,\r\n        \t\"value\": \"12cm\" \r\n         \r\n\t\t}\r\n    ]\r\n}"
+							"raw": "{\r\n    \"name\": \"Novi nakit\",\r\n    \"categoryId\": 23,\r\n    \"shortDescription\" : \"kratak opis\",\r\n    \"description\": \"dugacak opis\",\r\n    \"price\": 200,\r\n\r\n    \"features\": [\r\n\r\n        {\r\n        \t\"featureId\": 23,\r\n        \t\"value\": \"Novi proizvodjac\"\r\n        },\r\n        \r\n        {\r\n        \t\"featureId\": 20,\r\n        \t\"value\": \"12cm\" \r\n         \r\n\t\t}\r\n    ]\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/api/article/createFull/",
@@ -630,19 +604,19 @@
 					},
 					"response": [
 						{
-							"name": "POST createFull",
+							"name": "POST create full article",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
+										"type": "text",
+										"value": "application/json"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Plava ogrlica\",\r\n    \"categoryId\": 1,\r\n    \"shortDescription\" : \"kratak opis\",\r\n    \"description\": \"dugacak opis\",\r\n    \"price\": 200,\r\n    \"manufacturerId\": 1,\r\n    \"materialId\": 1,\r\n\r\n    \"features\": [\r\n\r\n        {\r\n        \t\"featureId\": 1,\r\n        \t\"value\": \"Zelena\"\r\n        },\r\n        \r\n        {\r\n        \t\"featureId\": 2,\r\n        \t\"value\": \"12cm\" \r\n         \r\n\t\t}\r\n    ]\r\n}"
+									"raw": "{\r\n    \"name\": \"Novi nakit\",\r\n    \"categoryId\": 23,\r\n    \"shortDescription\" : \"kratak opis\",\r\n    \"description\": \"dugacak opis\",\r\n    \"price\": 200,\r\n\r\n    \"features\": [\r\n\r\n        {\r\n        \t\"featureId\": 23,\r\n        \t\"value\": \"Novi proizvodjac\"\r\n        },\r\n        \r\n        {\r\n        \t\"featureId\": 20,\r\n        \t\"value\": \"12cm\" \r\n         \r\n\t\t}\r\n    ]\r\n}"
 								},
 								"url": {
 									"raw": "http://localhost:3000/api/article/createFull/",
@@ -668,20 +642,24 @@
 									"value": "Express"
 								},
 								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
 									"key": "Content-Type",
 									"value": "application/json; charset=utf-8"
 								},
 								{
 									"key": "Content-Length",
-									"value": "644"
+									"value": "569"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"284-dAYe7MnR+EJ4ZSZ1kiOA4gHNqgI\""
+									"value": "W/\"239-uSPqIMROXY7hmo7KN8MSMNzDvUY\""
 								},
 								{
 									"key": "Date",
-									"value": "Wed, 13 May 2020 15:40:46 GMT"
+									"value": "Tue, 11 Aug 2020 15:36:47 GMT"
 								},
 								{
 									"key": "Connection",
@@ -689,7 +667,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"articleId\": 18,\n    \"name\": \"Plava ogrlica\",\n    \"description\": \"dugacak opis\",\n    \"manufacturerId\": 1,\n    \"categoryId\": 1,\n    \"shortDescription\": \"kratak opis\",\n    \"materialId\": 1,\n    \"price\": \"200.00\",\n    \"createdAt\": \"2020-05-13T15:40:46.000Z\",\n    \"category\": {\n        \"categoryId\": 1,\n        \"name\": \"Ogrlice\",\n        \"imagePath\": \"assets/ogrlice.jpg\"\n    },\n    \"articleFeatures\": [\n        {\n            \"articleFeatureId\": 30,\n            \"articleId\": 18,\n            \"featureId\": 1,\n            \"value\": \"Zelena\"\n        },\n        {\n            \"articleFeatureId\": 31,\n            \"articleId\": 18,\n            \"featureId\": 2,\n            \"value\": \"12cm\"\n        }\n    ],\n    \"features\": [\n        {\n            \"featureId\": 1,\n            \"name\": \"Boja\",\n            \"categoryId\": 1\n        },\n        {\n            \"featureId\": 2,\n            \"name\": \"Duzina\",\n            \"categoryId\": 1\n        }\n    ],\n    \"manufacturer\": {\n        \"manufacturerId\": 1,\n        \"name\": \"Guess\"\n    },\n    \"material\": {\n        \"materialId\": 1,\n        \"name\": \"Plastika\"\n    }\n}"
+							"body": "{\n    \"articleId\": 86,\n    \"name\": \"Novi nakit\",\n    \"description\": \"dugacak opis\",\n    \"categoryId\": 23,\n    \"shortDescription\": \"kratak opis\",\n    \"price\": \"200.00\",\n    \"createdAt\": \"2020-08-11T15:36:47.000Z\",\n    \"category\": {\n        \"categoryId\": 23,\n        \"name\": \"Ogrlice izmenjene\",\n        \"imagePath\": \"https://slika.jpg\",\n        \"description\": \"Izmenjen opis\"\n    },\n    \"articleFeatures\": [\n        {\n            \"articleFeatureId\": 115,\n            \"articleId\": 86,\n            \"featureId\": 20,\n            \"value\": \"12cm\"\n        },\n        {\n            \"articleFeatureId\": 114,\n            \"articleId\": 86,\n            \"featureId\": 23,\n            \"value\": \"Novi proizvodjac\"\n        }\n    ],\n    \"features\": [\n        {\n            \"featureId\": 20,\n            \"name\": \"Obim\",\n            \"categoryId\": 23\n        },\n        {\n            \"featureId\": 23,\n            \"name\": \"sirina\",\n            \"categoryId\": 24\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -985,7 +963,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/article/1/",
+							"raw": "http://localhost:3000/api/article/86/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -994,7 +972,7 @@
 							"path": [
 								"api",
 								"article",
-								"1",
+								"86",
 								""
 							]
 						}
@@ -1006,7 +984,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3000/api/article/1/",
+									"raw": "http://localhost:3000/api/article/86/",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1015,7 +993,7 @@
 									"path": [
 										"api",
 										"article",
-										"1",
+										"86",
 										""
 									]
 								}
@@ -1029,20 +1007,24 @@
 									"value": "Express"
 								},
 								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
 									"key": "Content-Type",
 									"value": "application/json; charset=utf-8"
 								},
 								{
 									"key": "Content-Length",
-									"value": "840"
+									"value": "581"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"348-At+bJjrYp0WgliKPhbjEwMU1qsE\""
+									"value": "W/\"245-vBT/NKQKJPHrEF+3zhcJ3kgjxbg\""
 								},
 								{
 									"key": "Date",
-									"value": "Fri, 15 May 2020 13:50:16 GMT"
+									"value": "Tue, 11 Aug 2020 15:38:20 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1050,7 +1032,173 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"articleId\": 1,\n    \"name\": \"Plava ogrlica\",\n    \"description\": \"dugacak opis\",\n    \"manufacturerId\": 1,\n    \"categoryId\": 1,\n    \"shortDescription\": \"kratak opis\",\n    \"materialId\": 1,\n    \"price\": \"200.00\",\n    \"createdAt\": \"2020-05-13T12:34:18.000Z\",\n    \"category\": {\n        \"categoryId\": 1,\n        \"name\": \"Ogrlice\",\n        \"imagePath\": \"assets/ogrlice.jpg\"\n    },\n    \"photos\": [\n        {\n            \"photoId\": 22,\n            \"articleId\": 1,\n            \"imagePath\": \"2020515-2541234217-ogrlica-slika.jpg\"\n        }\n    ],\n    \"manufacturer\": {\n        \"manufacturerId\": 1,\n        \"name\": \"Guess\"\n    },\n    \"material\": {\n        \"materialId\": 1,\n        \"name\": \"Plastika\"\n    },\n    \"articleFeatures\": [\n        {\n            \"articleFeatureId\": 1,\n            \"articleId\": 1,\n            \"featureId\": 1,\n            \"value\": \"Zelena\"\n        },\n        {\n            \"articleFeatureId\": 4,\n            \"articleId\": 1,\n            \"featureId\": 2,\n            \"value\": \"12cm\"\n        },\n        {\n            \"articleFeatureId\": 5,\n            \"articleId\": 1,\n            \"featureId\": 4,\n            \"value\": \"3cm\"\n        }\n    ],\n    \"features\": [\n        {\n            \"featureId\": 1,\n            \"name\": \"Boja\",\n            \"categoryId\": 1\n        },\n        {\n            \"featureId\": 2,\n            \"name\": \"Duzina\",\n            \"categoryId\": 1\n        },\n        {\n            \"featureId\": 4,\n            \"name\": \"Obim\",\n            \"categoryId\": 1\n        }\n    ]\n}"
+							"body": "{\n    \"articleId\": 86,\n    \"name\": \"Novi nakit\",\n    \"description\": \"dugacak opis\",\n    \"categoryId\": 23,\n    \"shortDescription\": \"kratak opis\",\n    \"price\": \"200.00\",\n    \"createdAt\": \"2020-08-11T15:36:47.000Z\",\n    \"category\": {\n        \"categoryId\": 23,\n        \"name\": \"Ogrlice izmenjene\",\n        \"imagePath\": \"https://slika.jpg\",\n        \"description\": \"Izmenjen opis\"\n    },\n    \"photos\": [],\n    \"articleFeatures\": [\n        {\n            \"articleFeatureId\": 115,\n            \"articleId\": 86,\n            \"featureId\": 20,\n            \"value\": \"12cm\"\n        },\n        {\n            \"articleFeatureId\": 114,\n            \"articleId\": 86,\n            \"featureId\": 23,\n            \"value\": \"Novi proizvodjac\"\n        }\n    ],\n    \"features\": [\n        {\n            \"featureId\": 20,\n            \"name\": \"Obim\",\n            \"categoryId\": 23\n        },\n        {\n            \"featureId\": 23,\n            \"name\": \"sirina\",\n            \"categoryId\": 24\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get all articles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/article/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"article",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all articles",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/article/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"article",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "10714"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"29da-iBr9ZTRHsHEmn5JxdPWleYM4WR8\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Aug 2020 15:40:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"articleId\": 59,\n        \"name\": \"Mindjuse TEST EDITA\",\n        \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed pharetra ligula. Nam elementum actor ullamcorper. Vivamus dui ligula, egestas ut dictum id, vestibulum sed lectus. Suspendisse vitae volutpat ex. Curabitur tempus malesuada velit, et feugiat elit mattis et. Phasellus id mattis est. Quisque semper euismod tortor a luctus\",\n        \"categoryId\": 23,\n        \"shortDescription\": \"Suspendisse imperdiet dui eu sapien cursus, ac eleifend lectus ullamcorper.\",\n        \"price\": \"1111.00\",\n        \"createdAt\": \"2020-07-08T19:22:38.000Z\",\n        \"category\": {\n            \"categoryId\": 23,\n            \"name\": \"Ogrlice izmenjene\",\n            \"imagePath\": \"https://slika.jpg\",\n            \"description\": \"Izmenjen opis\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 71,\n                \"articleId\": 59,\n                \"imagePath\": \"202082-5758585841-dsc01660-100718329-large.jpg\"\n            },\n            {\n                \"photoId\": 72,\n                \"articleId\": 59,\n                \"imagePath\": \"202082-9531038567-cd3000-1_1.jpg\"\n            },\n            {\n                \"photoId\": 74,\n                \"articleId\": 59,\n                \"imagePath\": \"202082-5725984447-capture.png\"\n            }\n        ],\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 112,\n                \"articleId\": 59,\n                \"featureId\": 20,\n                \"value\": \"15cm\"\n            },\n            {\n                \"articleFeatureId\": 113,\n                \"articleId\": 59,\n                \"featureId\": 22,\n                \"value\": \"Jewelery factory\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 20,\n                \"name\": \"Obim\",\n                \"categoryId\": 23\n            },\n            {\n                \"featureId\": 22,\n                \"name\": \"Proizvodjac\",\n                \"categoryId\": 23\n            }\n        ]\n    },\n    {\n        \"articleId\": 63,\n        \"name\": \"asddasdasdasasd\",\n        \"description\": \"dasdasdasdas\",\n        \"categoryId\": 23,\n        \"shortDescription\": \"dasdasdasdasdas\",\n        \"price\": \"222.00\",\n        \"createdAt\": \"2020-07-08T19:36:03.000Z\",\n        \"category\": {\n            \"categoryId\": 23,\n            \"name\": \"Ogrlice izmenjene\",\n            \"imagePath\": \"https://slika.jpg\",\n            \"description\": \"Izmenjen opis\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 48,\n                \"articleId\": 63,\n                \"imagePath\": \"202078-6343974077-capture2.png\"\n            }\n        ],\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 89,\n                \"articleId\": 63,\n                \"featureId\": 20,\n                \"value\": \"12cm\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 20,\n                \"name\": \"Obim\",\n                \"categoryId\": 23\n            }\n        ]\n    },\n    {\n        \"articleId\": 66,\n        \"name\": \"dfgdfsdfs5534534534\",\n        \"description\": \"dfgdfsdfs5534534534\",\n        \"categoryId\": 23,\n        \"shortDescription\": \"dfgdfsdfs5534534534\",\n        \"price\": \"343.00\",\n        \"createdAt\": \"2020-07-08T20:34:12.000Z\",\n        \"category\": {\n            \"categoryId\": 23,\n            \"name\": \"Ogrlice izmenjene\",\n            \"imagePath\": \"https://slika.jpg\",\n            \"description\": \"Izmenjen opis\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 51,\n                \"articleId\": 66,\n                \"imagePath\": \"202078-3317591014-slika2.jpg\"\n            }\n        ],\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 92,\n                \"articleId\": 66,\n                \"featureId\": 20,\n                \"value\": \"5cm\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 20,\n                \"name\": \"Obim\",\n                \"categoryId\": 23\n            }\n        ]\n    },\n    {\n        \"articleId\": 80,\n        \"name\": \"DUZINADUZINADUZINADUZINADUZINAasd\",\n        \"description\": \"DUZINADUZINADUZINADUZINAds\",\n        \"categoryId\": 23,\n        \"shortDescription\": \"DUZINADUZINADUZINADUZINADUZINA\",\n        \"price\": \"45.00\",\n        \"createdAt\": \"2020-07-09T11:21:38.000Z\",\n        \"category\": {\n            \"categoryId\": 23,\n            \"name\": \"Ogrlice izmenjene\",\n            \"imagePath\": \"https://slika.jpg\",\n            \"description\": \"Izmenjen opis\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 60,\n                \"articleId\": 80,\n                \"imagePath\": \"202079-8662739838-slika2.jpg\"\n            }\n        ],\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 105,\n                \"articleId\": 80,\n                \"featureId\": 20,\n                \"value\": \"6cm\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 20,\n                \"name\": \"Obim\",\n                \"categoryId\": 23\n            }\n        ]\n    },\n    {\n        \"articleId\": 82,\n        \"name\": \"NEKI NAMEEEENEKI NAMEEEE\",\n        \"description\": \"NEKI NAMEEEENEKI NAMEEEENEKI NAMEEEE\",\n        \"categoryId\": 23,\n        \"shortDescription\": \"NEKI NAMEEEENEKI NAMEEEE\",\n        \"price\": \"999999.00\",\n        \"createdAt\": \"2020-07-09T11:22:49.000Z\",\n        \"category\": {\n            \"categoryId\": 23,\n            \"name\": \"Ogrlice izmenjene\",\n            \"imagePath\": \"https://slika.jpg\",\n            \"description\": \"Izmenjen opis\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 61,\n                \"articleId\": 82,\n                \"imagePath\": \"202079-1834553716-slika2.jpg\"\n            },\n            {\n                \"photoId\": 75,\n                \"articleId\": 82,\n                \"imagePath\": \"2020810-1098287455-capture.png\"\n            }\n        ],\n        \"articleFeatures\": [],\n        \"features\": []\n    },\n    {\n        \"articleId\": 86,\n        \"name\": \"Novi nakit\",\n        \"description\": \"dugacak opis\",\n        \"categoryId\": 23,\n        \"shortDescription\": \"kratak opis\",\n        \"price\": \"200.00\",\n        \"createdAt\": \"2020-08-11T15:36:47.000Z\",\n        \"category\": {\n            \"categoryId\": 23,\n            \"name\": \"Ogrlice izmenjene\",\n            \"imagePath\": \"https://slika.jpg\",\n            \"description\": \"Izmenjen opis\"\n        },\n        \"photos\": [],\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 115,\n                \"articleId\": 86,\n                \"featureId\": 20,\n                \"value\": \"12cm\"\n            },\n            {\n                \"articleFeatureId\": 114,\n                \"articleId\": 86,\n                \"featureId\": 23,\n                \"value\": \"Novi proizvodjac\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 20,\n                \"name\": \"Obim\",\n                \"categoryId\": 23\n            },\n            {\n                \"featureId\": 23,\n                \"name\": \"sirina\",\n                \"categoryId\": 24\n            }\n        ]\n    },\n    {\n        \"articleId\": 62,\n        \"name\": \"dasdasdasdasdas\",\n        \"description\": \"dasdasadsdasads\",\n        \"categoryId\": 24,\n        \"shortDescription\": \"dasdasasdasdas\",\n        \"price\": \"222.00\",\n        \"createdAt\": \"2020-07-08T19:32:49.000Z\",\n        \"category\": {\n            \"categoryId\": 24,\n            \"name\": \"Narukvice\",\n            \"imagePath\": \"http://localhost:3000/assets/photos/small/202078-6343974077-capture2.png\",\n            \"description\": \"Neki opis 2\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 47,\n                \"articleId\": 62,\n                \"imagePath\": \"202078-4585505347-slika2.jpg\"\n            }\n        ],\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 88,\n                \"articleId\": 62,\n                \"featureId\": 21,\n                \"value\": \"123\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 21,\n                \"name\": \"Duzina\",\n                \"categoryId\": 24\n            }\n        ]\n    },\n    {\n        \"articleId\": 64,\n        \"name\": \"asddasdasdasdas\",\n        \"description\": \"dasdasdasdasasasd\",\n        \"categoryId\": 24,\n        \"shortDescription\": \"dasdasdasadsadssd\",\n        \"price\": \"222.00\",\n        \"createdAt\": \"2020-07-08T20:33:08.000Z\",\n        \"category\": {\n            \"categoryId\": 24,\n            \"name\": \"Narukvice\",\n            \"imagePath\": \"http://localhost:3000/assets/photos/small/202078-6343974077-capture2.png\",\n            \"description\": \"Neki opis 2\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 49,\n                \"articleId\": 64,\n                \"imagePath\": \"202078-8478501166-slika2.jpg\"\n            }\n        ],\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 100,\n                \"articleId\": 64,\n                \"featureId\": 21,\n                \"value\": \"asddas\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 21,\n                \"name\": \"Duzina\",\n                \"categoryId\": 24\n            }\n        ]\n    },\n    {\n        \"articleId\": 65,\n        \"name\": \"34334343\",\n        \"description\": \"23423423432424\",\n        \"categoryId\": 24,\n        \"shortDescription\": \"324234234234234\",\n        \"price\": \"23.00\",\n        \"createdAt\": \"2020-07-08T20:33:44.000Z\",\n        \"category\": {\n            \"categoryId\": 24,\n            \"name\": \"Narukvice\",\n            \"imagePath\": \"http://localhost:3000/assets/photos/small/202078-6343974077-capture2.png\",\n            \"description\": \"Neki opis 2\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 50,\n                \"articleId\": 65,\n                \"imagePath\": \"202078-2320957311-slika2.jpg\"\n            }\n        ],\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 91,\n                \"articleId\": 65,\n                \"featureId\": 21,\n                \"value\": \"asasd\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 21,\n                \"name\": \"Duzina\",\n                \"categoryId\": 24\n            }\n        ]\n    },\n    {\n        \"articleId\": 67,\n        \"name\": \"232323322323fadadasdas\",\n        \"description\": \"dasdasasddasadsdas\",\n        \"categoryId\": 24,\n        \"shortDescription\": \"asdassdadsasd\",\n        \"price\": \"33.00\",\n        \"createdAt\": \"2020-07-08T20:36:11.000Z\",\n        \"category\": {\n            \"categoryId\": 24,\n            \"name\": \"Narukvice\",\n            \"imagePath\": \"http://localhost:3000/assets/photos/small/202078-6343974077-capture2.png\",\n            \"description\": \"Neki opis 2\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 52,\n                \"articleId\": 67,\n                \"imagePath\": \"202078-5872563380-slika2.jpg\"\n            }\n        ],\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 93,\n                \"articleId\": 67,\n                \"featureId\": 21,\n                \"value\": \"asdf\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 21,\n                \"name\": \"Duzina\",\n                \"categoryId\": 24\n            }\n        ]\n    },\n    {\n        \"articleId\": 68,\n        \"name\": \"NOVI ARTIKAL TEST\",\n        \"description\": \"NOVI ARTIKAL TESTNOVI ARTIKAL TEST\",\n        \"categoryId\": 24,\n        \"shortDescription\": \"NOVI ARTIKAL TESTNOVI ARTIKAL TEST\",\n        \"price\": \"1111.00\",\n        \"createdAt\": \"2020-07-08T20:41:54.000Z\",\n        \"category\": {\n            \"categoryId\": 24,\n            \"name\": \"Narukvice\",\n            \"imagePath\": \"http://localhost:3000/assets/photos/small/202078-6343974077-capture2.png\",\n            \"description\": \"Neki opis 2\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 53,\n                \"articleId\": 68,\n                \"imagePath\": \"202078-3122221688-slika2.jpg\"\n            }\n        ],\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 94,\n                \"articleId\": 68,\n                \"featureId\": 21,\n                \"value\": \"111\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 21,\n                \"name\": \"Duzina\",\n                \"categoryId\": 24\n            }\n        ]\n    },\n    {\n        \"articleId\": 69,\n        \"name\": \"asdfasd\",\n        \"description\": \"ffasdsdasdas\",\n        \"categoryId\": 24,\n        \"shortDescription\": \"affadsdasadsasd\",\n        \"price\": \"23.00\",\n        \"createdAt\": \"2020-07-09T06:58:28.000Z\",\n        \"category\": {\n            \"categoryId\": 24,\n            \"name\": \"Narukvice\",\n            \"imagePath\": \"http://localhost:3000/assets/photos/small/202078-6343974077-capture2.png\",\n            \"description\": \"Neki opis 2\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 54,\n                \"articleId\": 69,\n                \"imagePath\": \"202079-5744267960-slika2.jpg\"\n            }\n        ],\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 95,\n                \"articleId\": 69,\n                \"featureId\": 21,\n                \"value\": \"3\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 21,\n                \"name\": \"Duzina\",\n                \"categoryId\": 24\n            }\n        ]\n    },\n    {\n        \"articleId\": 70,\n        \"name\": \"11111111111111\",\n        \"description\": \"1111111111111111111111111111\",\n        \"categoryId\": 24,\n        \"shortDescription\": \"11111111111111\",\n        \"price\": \"222.00\",\n        \"createdAt\": \"2020-07-09T07:29:44.000Z\",\n        \"category\": {\n            \"categoryId\": 24,\n            \"name\": \"Narukvice\",\n            \"imagePath\": \"http://localhost:3000/assets/photos/small/202078-6343974077-capture2.png\",\n            \"description\": \"Neki opis 2\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 55,\n                \"articleId\": 70,\n                \"imagePath\": \"202079-8201317553-slika2.jpg\"\n            }\n        ],\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 96,\n                \"articleId\": 70,\n                \"featureId\": 21,\n                \"value\": \"11111111111111\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 21,\n                \"name\": \"Duzina\",\n                \"categoryId\": 24\n            }\n        ]\n    },\n    {\n        \"articleId\": 71,\n        \"name\": \"adasasdasasd\",\n        \"description\": \"asdasdasdsadsd\",\n        \"categoryId\": 24,\n        \"shortDescription\": \"asdasdasasdasdas\",\n        \"price\": \"333.00\",\n        \"createdAt\": \"2020-07-09T07:40:47.000Z\",\n        \"category\": {\n            \"categoryId\": 24,\n            \"name\": \"Narukvice\",\n            \"imagePath\": \"http://localhost:3000/assets/photos/small/202078-6343974077-capture2.png\",\n            \"description\": \"Neki opis 2\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 56,\n                \"articleId\": 71,\n                \"imagePath\": \"202079-0848138186-slika2.jpg\"\n            }\n        ],\n        \"articleFeatures\": [],\n        \"features\": []\n    },\n    {\n        \"articleId\": 72,\n        \"name\": \"asddasdasdas\",\n        \"description\": \"dasdasdasdas\",\n        \"categoryId\": 24,\n        \"shortDescription\": \"dasdasdasdasdas\",\n        \"price\": \"3223.00\",\n        \"createdAt\": \"2020-07-09T10:22:47.000Z\",\n        \"category\": {\n            \"categoryId\": 24,\n            \"name\": \"Narukvice\",\n            \"imagePath\": \"http://localhost:3000/assets/photos/small/202078-6343974077-capture2.png\",\n            \"description\": \"Neki opis 2\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 57,\n                \"articleId\": 72,\n                \"imagePath\": \"202079-2633726456-2.png\"\n            }\n        ],\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 98,\n                \"articleId\": 72,\n                \"featureId\": 21,\n                \"value\": \"343\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 21,\n                \"name\": \"Duzina\",\n                \"categoryId\": 24\n            }\n        ]\n    },\n    {\n        \"articleId\": 73,\n        \"name\": \"DUZINADUZINADUZINADUZINADUZINA\",\n        \"description\": \"DUZINADUZINADUZINADUZINADUZINA\",\n        \"categoryId\": 24,\n        \"shortDescription\": \"DUZINADUZINADUZINADUZINA\",\n        \"price\": \"0.01\",\n        \"createdAt\": \"2020-07-09T11:19:42.000Z\",\n        \"category\": {\n            \"categoryId\": 24,\n            \"name\": \"Narukvice\",\n            \"imagePath\": \"http://localhost:3000/assets/photos/small/202078-6343974077-capture2.png\",\n            \"description\": \"Neki opis 2\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 58,\n                \"articleId\": 73,\n                \"imagePath\": \"202079-8146547887-slika2.jpg\"\n            }\n        ],\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 99,\n                \"articleId\": 73,\n                \"featureId\": 21,\n                \"value\": \"23\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 21,\n                \"name\": \"Duzina\",\n                \"categoryId\": 24\n            }\n        ]\n    },\n    {\n        \"articleId\": 77,\n        \"name\": \"DUZINADUZINADUZINADUZINA\",\n        \"description\": \"DUZINADUZINADUZINADDUZINAUZINA\",\n        \"categoryId\": 24,\n        \"shortDescription\": \"DUZINADUZINADUZINADUZINA\",\n        \"price\": \"23.00\",\n        \"createdAt\": \"2020-07-09T11:20:49.000Z\",\n        \"category\": {\n            \"categoryId\": 24,\n            \"name\": \"Narukvice\",\n            \"imagePath\": \"http://localhost:3000/assets/photos/small/202078-6343974077-capture2.png\",\n            \"description\": \"Neki opis 2\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 59,\n                \"articleId\": 77,\n                \"imagePath\": \"202079-5868896592-slika2.jpg\"\n            }\n        ],\n        \"articleFeatures\": [],\n        \"features\": []\n    },\n    {\n        \"articleId\": 83,\n        \"name\": \"ASDASD\",\n        \"description\": \"DASDASDSDAS\",\n        \"categoryId\": 24,\n        \"shortDescription\": \"ASDASDASDAS\",\n        \"price\": \"2323.00\",\n        \"createdAt\": \"2020-07-09T11:31:18.000Z\",\n        \"category\": {\n            \"categoryId\": 24,\n            \"name\": \"Narukvice\",\n            \"imagePath\": \"http://localhost:3000/assets/photos/small/202078-6343974077-capture2.png\",\n            \"description\": \"Neki opis 2\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 62,\n                \"articleId\": 83,\n                \"imagePath\": \"202079-1744152226-slika2.jpg\"\n            }\n        ],\n        \"articleFeatures\": [],\n        \"features\": []\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get many articles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/article/?filter=categoryId||$eq||24",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"article",
+								""
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "categoryId||$eq||24"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get many articles",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/article/?filter=categoryId||$eq||24",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"article",
+										""
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "categoryId||$eq||24"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "6712"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a38-BcrXYmstHLV7bLa9FYqMW8aDZ94\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Aug 2020 15:39:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"articleId\": 62,\n        \"name\": \"dasdasdasdasdas\",\n        \"description\": \"dasdasadsdasads\",\n        \"categoryId\": 24,\n        \"shortDescription\": \"dasdasasdasdas\",\n        \"price\": \"222.00\",\n        \"createdAt\": \"2020-07-08T19:32:49.000Z\",\n        \"category\": {\n            \"categoryId\": 24,\n            \"name\": \"Narukvice\",\n            \"imagePath\": \"http://localhost:3000/assets/photos/small/202078-6343974077-capture2.png\",\n            \"description\": \"Neki opis 2\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 47,\n                \"articleId\": 62,\n                \"imagePath\": \"202078-4585505347-slika2.jpg\"\n            }\n        ],\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 88,\n                \"articleId\": 62,\n                \"featureId\": 21,\n                \"value\": \"123\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 21,\n                \"name\": \"Duzina\",\n                \"categoryId\": 24\n            }\n        ]\n    },\n    {\n        \"articleId\": 64,\n        \"name\": \"asddasdasdasdas\",\n        \"description\": \"dasdasdasdasasasd\",\n        \"categoryId\": 24,\n        \"shortDescription\": \"dasdasdasadsadssd\",\n        \"price\": \"222.00\",\n        \"createdAt\": \"2020-07-08T20:33:08.000Z\",\n        \"category\": {\n            \"categoryId\": 24,\n            \"name\": \"Narukvice\",\n            \"imagePath\": \"http://localhost:3000/assets/photos/small/202078-6343974077-capture2.png\",\n            \"description\": \"Neki opis 2\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 49,\n                \"articleId\": 64,\n                \"imagePath\": \"202078-8478501166-slika2.jpg\"\n            }\n        ],\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 100,\n                \"articleId\": 64,\n                \"featureId\": 21,\n                \"value\": \"asddas\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 21,\n                \"name\": \"Duzina\",\n                \"categoryId\": 24\n            }\n        ]\n    },\n    {\n        \"articleId\": 65,\n        \"name\": \"34334343\",\n        \"description\": \"23423423432424\",\n        \"categoryId\": 24,\n        \"shortDescription\": \"324234234234234\",\n        \"price\": \"23.00\",\n        \"createdAt\": \"2020-07-08T20:33:44.000Z\",\n        \"category\": {\n            \"categoryId\": 24,\n            \"name\": \"Narukvice\",\n            \"imagePath\": \"http://localhost:3000/assets/photos/small/202078-6343974077-capture2.png\",\n            \"description\": \"Neki opis 2\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 50,\n                \"articleId\": 65,\n                \"imagePath\": \"202078-2320957311-slika2.jpg\"\n            }\n        ],\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 91,\n                \"articleId\": 65,\n                \"featureId\": 21,\n                \"value\": \"asasd\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 21,\n                \"name\": \"Duzina\",\n                \"categoryId\": 24\n            }\n        ]\n    },\n    {\n        \"articleId\": 67,\n        \"name\": \"232323322323fadadasdas\",\n        \"description\": \"dasdasasddasadsdas\",\n        \"categoryId\": 24,\n        \"shortDescription\": \"asdassdadsasd\",\n        \"price\": \"33.00\",\n        \"createdAt\": \"2020-07-08T20:36:11.000Z\",\n        \"category\": {\n            \"categoryId\": 24,\n            \"name\": \"Narukvice\",\n            \"imagePath\": \"http://localhost:3000/assets/photos/small/202078-6343974077-capture2.png\",\n            \"description\": \"Neki opis 2\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 52,\n                \"articleId\": 67,\n                \"imagePath\": \"202078-5872563380-slika2.jpg\"\n            }\n        ],\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 93,\n                \"articleId\": 67,\n                \"featureId\": 21,\n                \"value\": \"asdf\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 21,\n                \"name\": \"Duzina\",\n                \"categoryId\": 24\n            }\n        ]\n    },\n    {\n        \"articleId\": 68,\n        \"name\": \"NOVI ARTIKAL TEST\",\n        \"description\": \"NOVI ARTIKAL TESTNOVI ARTIKAL TEST\",\n        \"categoryId\": 24,\n        \"shortDescription\": \"NOVI ARTIKAL TESTNOVI ARTIKAL TEST\",\n        \"price\": \"1111.00\",\n        \"createdAt\": \"2020-07-08T20:41:54.000Z\",\n        \"category\": {\n            \"categoryId\": 24,\n            \"name\": \"Narukvice\",\n            \"imagePath\": \"http://localhost:3000/assets/photos/small/202078-6343974077-capture2.png\",\n            \"description\": \"Neki opis 2\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 53,\n                \"articleId\": 68,\n                \"imagePath\": \"202078-3122221688-slika2.jpg\"\n            }\n        ],\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 94,\n                \"articleId\": 68,\n                \"featureId\": 21,\n                \"value\": \"111\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 21,\n                \"name\": \"Duzina\",\n                \"categoryId\": 24\n            }\n        ]\n    },\n    {\n        \"articleId\": 69,\n        \"name\": \"asdfasd\",\n        \"description\": \"ffasdsdasdas\",\n        \"categoryId\": 24,\n        \"shortDescription\": \"affadsdasadsasd\",\n        \"price\": \"23.00\",\n        \"createdAt\": \"2020-07-09T06:58:28.000Z\",\n        \"category\": {\n            \"categoryId\": 24,\n            \"name\": \"Narukvice\",\n            \"imagePath\": \"http://localhost:3000/assets/photos/small/202078-6343974077-capture2.png\",\n            \"description\": \"Neki opis 2\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 54,\n                \"articleId\": 69,\n                \"imagePath\": \"202079-5744267960-slika2.jpg\"\n            }\n        ],\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 95,\n                \"articleId\": 69,\n                \"featureId\": 21,\n                \"value\": \"3\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 21,\n                \"name\": \"Duzina\",\n                \"categoryId\": 24\n            }\n        ]\n    },\n    {\n        \"articleId\": 70,\n        \"name\": \"11111111111111\",\n        \"description\": \"1111111111111111111111111111\",\n        \"categoryId\": 24,\n        \"shortDescription\": \"11111111111111\",\n        \"price\": \"222.00\",\n        \"createdAt\": \"2020-07-09T07:29:44.000Z\",\n        \"category\": {\n            \"categoryId\": 24,\n            \"name\": \"Narukvice\",\n            \"imagePath\": \"http://localhost:3000/assets/photos/small/202078-6343974077-capture2.png\",\n            \"description\": \"Neki opis 2\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 55,\n                \"articleId\": 70,\n                \"imagePath\": \"202079-8201317553-slika2.jpg\"\n            }\n        ],\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 96,\n                \"articleId\": 70,\n                \"featureId\": 21,\n                \"value\": \"11111111111111\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 21,\n                \"name\": \"Duzina\",\n                \"categoryId\": 24\n            }\n        ]\n    },\n    {\n        \"articleId\": 71,\n        \"name\": \"adasasdasasd\",\n        \"description\": \"asdasdasdsadsd\",\n        \"categoryId\": 24,\n        \"shortDescription\": \"asdasdasasdasdas\",\n        \"price\": \"333.00\",\n        \"createdAt\": \"2020-07-09T07:40:47.000Z\",\n        \"category\": {\n            \"categoryId\": 24,\n            \"name\": \"Narukvice\",\n            \"imagePath\": \"http://localhost:3000/assets/photos/small/202078-6343974077-capture2.png\",\n            \"description\": \"Neki opis 2\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 56,\n                \"articleId\": 71,\n                \"imagePath\": \"202079-0848138186-slika2.jpg\"\n            }\n        ],\n        \"articleFeatures\": [],\n        \"features\": []\n    },\n    {\n        \"articleId\": 72,\n        \"name\": \"asddasdasdas\",\n        \"description\": \"dasdasdasdas\",\n        \"categoryId\": 24,\n        \"shortDescription\": \"dasdasdasdasdas\",\n        \"price\": \"3223.00\",\n        \"createdAt\": \"2020-07-09T10:22:47.000Z\",\n        \"category\": {\n            \"categoryId\": 24,\n            \"name\": \"Narukvice\",\n            \"imagePath\": \"http://localhost:3000/assets/photos/small/202078-6343974077-capture2.png\",\n            \"description\": \"Neki opis 2\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 57,\n                \"articleId\": 72,\n                \"imagePath\": \"202079-2633726456-2.png\"\n            }\n        ],\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 98,\n                \"articleId\": 72,\n                \"featureId\": 21,\n                \"value\": \"343\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 21,\n                \"name\": \"Duzina\",\n                \"categoryId\": 24\n            }\n        ]\n    },\n    {\n        \"articleId\": 73,\n        \"name\": \"DUZINADUZINADUZINADUZINADUZINA\",\n        \"description\": \"DUZINADUZINADUZINADUZINADUZINA\",\n        \"categoryId\": 24,\n        \"shortDescription\": \"DUZINADUZINADUZINADUZINA\",\n        \"price\": \"0.01\",\n        \"createdAt\": \"2020-07-09T11:19:42.000Z\",\n        \"category\": {\n            \"categoryId\": 24,\n            \"name\": \"Narukvice\",\n            \"imagePath\": \"http://localhost:3000/assets/photos/small/202078-6343974077-capture2.png\",\n            \"description\": \"Neki opis 2\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 58,\n                \"articleId\": 73,\n                \"imagePath\": \"202079-8146547887-slika2.jpg\"\n            }\n        ],\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 99,\n                \"articleId\": 73,\n                \"featureId\": 21,\n                \"value\": \"23\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 21,\n                \"name\": \"Duzina\",\n                \"categoryId\": 24\n            }\n        ]\n    },\n    {\n        \"articleId\": 77,\n        \"name\": \"DUZINADUZINADUZINADUZINA\",\n        \"description\": \"DUZINADUZINADUZINADDUZINAUZINA\",\n        \"categoryId\": 24,\n        \"shortDescription\": \"DUZINADUZINADUZINADUZINA\",\n        \"price\": \"23.00\",\n        \"createdAt\": \"2020-07-09T11:20:49.000Z\",\n        \"category\": {\n            \"categoryId\": 24,\n            \"name\": \"Narukvice\",\n            \"imagePath\": \"http://localhost:3000/assets/photos/small/202078-6343974077-capture2.png\",\n            \"description\": \"Neki opis 2\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 59,\n                \"articleId\": 77,\n                \"imagePath\": \"202079-5868896592-slika2.jpg\"\n            }\n        ],\n        \"articleFeatures\": [],\n        \"features\": []\n    },\n    {\n        \"articleId\": 83,\n        \"name\": \"ASDASD\",\n        \"description\": \"DASDASDSDAS\",\n        \"categoryId\": 24,\n        \"shortDescription\": \"ASDASDASDAS\",\n        \"price\": \"2323.00\",\n        \"createdAt\": \"2020-07-09T11:31:18.000Z\",\n        \"category\": {\n            \"categoryId\": 24,\n            \"name\": \"Narukvice\",\n            \"imagePath\": \"http://localhost:3000/assets/photos/small/202078-6343974077-capture2.png\",\n            \"description\": \"Neki opis 2\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 62,\n                \"articleId\": 83,\n                \"imagePath\": \"202079-1744152226-slika2.jpg\"\n            }\n        ],\n        \"articleFeatures\": [],\n        \"features\": []\n    }\n]"
 						}
 					]
 				},
@@ -1136,11 +1284,21 @@
 				{
 					"name": "Edit a single article without editing features",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjExLCJ1c2VybmFtZSI6Im1pbG9zIiwiZXhwIjoxNTk3MTYwODA0LjA5NywiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjYuMyIsImlhdCI6MTU5NzE2MDUwNH0.Vc_XgaY623p7LOKH1pv8_2QU4VoSzczoDCnoALrZLWE",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Mindjuse\",\r\n    \"categoryId\": 1,\r\n    \"shortDescription\": \"kratak tekst test 2\",\r\n    \"description\": \"duze tekst test 2\",\r\n    \"price\": 499,\r\n    \"manufacturerId\":1,\r\n    \"materialId\": 1,\r\n\r\n    \"features\": null\r\n}",
+							"raw": "{\r\n    \"name\": \"Mindjuse\",\r\n    \"categoryId\": 24,\r\n    \"shortDescription\": \"kratak tekst test 2\",\r\n    \"description\": \"duze tekst test 2\",\r\n    \"price\": 499,\r\n\r\n    \"features\": null\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1148,7 +1306,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/article/6/",
+							"raw": "http://localhost:3000/api/article/64/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1157,7 +1315,7 @@
 							"path": [
 								"api",
 								"article",
-								"6",
+								"64",
 								""
 							]
 						}
@@ -1170,7 +1328,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Mindjuse\",\r\n    \"categoryId\": 1,\r\n    \"shortDescription\": \"kratak tekst test 2\",\r\n    \"description\": \"duze tekst test 2\",\r\n    \"price\": 499,\r\n    \"manufacturerId\":1,\r\n    \"materialId\": 1,\r\n\r\n    \"features\": null\r\n}",
+									"raw": "{\r\n    \"name\": \"Mindjuse\",\r\n    \"categoryId\": 24,\r\n    \"shortDescription\": \"kratak tekst test 2\",\r\n    \"description\": \"duze tekst test 2\",\r\n    \"price\": 499,\r\n\r\n    \"features\": null\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1178,7 +1336,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3000/api/article/6/",
+									"raw": "http://localhost:3000/api/article/64/",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1187,7 +1345,7 @@
 									"path": [
 										"api",
 										"article",
-										"6",
+										"64",
 										""
 									]
 								}
@@ -1201,20 +1359,24 @@
 									"value": "Express"
 								},
 								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
 									"key": "Content-Type",
 									"value": "application/json; charset=utf-8"
 								},
 								{
 									"key": "Content-Length",
-									"value": "647"
+									"value": "582"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"287-Ofvm0d0yAt1I4eLvPZEzIVwZocA\""
+									"value": "W/\"246-6VLovib9y9n3YlHfcEuq/MZHFjY\""
 								},
 								{
 									"key": "Date",
-									"value": "Sun, 17 May 2020 12:56:11 GMT"
+									"value": "Tue, 11 Aug 2020 15:42:54 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1222,18 +1384,28 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"articleId\": 6,\n    \"name\": \"Mindjuse\",\n    \"description\": \"duze tekst test 2\",\n    \"manufacturerId\": 1,\n    \"categoryId\": 1,\n    \"shortDescription\": \"kratak tekst test 2\",\n    \"materialId\": 1,\n    \"price\": \"499.00\",\n    \"createdAt\": \"2020-05-13T15:31:11.000Z\",\n    \"category\": {\n        \"categoryId\": 1,\n        \"name\": \"Ogrlice\",\n        \"imagePath\": \"assets/ogrlice.jpg\"\n    },\n    \"articleFeatures\": [\n        {\n            \"articleFeatureId\": 6,\n            \"articleId\": 6,\n            \"featureId\": 1,\n            \"value\": \"Zelena\"\n        },\n        {\n            \"articleFeatureId\": 7,\n            \"articleId\": 6,\n            \"featureId\": 2,\n            \"value\": \"12cm\"\n        }\n    ],\n    \"features\": [\n        {\n            \"featureId\": 1,\n            \"name\": \"Boja\",\n            \"categoryId\": 1\n        },\n        {\n            \"featureId\": 2,\n            \"name\": \"Duzina\",\n            \"categoryId\": 1\n        }\n    ],\n    \"manufacturer\": {\n        \"manufacturerId\": 1,\n        \"name\": \"Guess\"\n    },\n    \"material\": {\n        \"materialId\": 1,\n        \"name\": \"Plastika\"\n    }\n}"
+							"body": "{\n    \"articleId\": 64,\n    \"name\": \"Mindjuse\",\n    \"description\": \"duze tekst test 2\",\n    \"categoryId\": 24,\n    \"shortDescription\": \"kratak tekst test 2\",\n    \"price\": \"499.00\",\n    \"createdAt\": \"2020-07-08T20:33:08.000Z\",\n    \"category\": {\n        \"categoryId\": 24,\n        \"name\": \"Narukvice\",\n        \"imagePath\": \"http://localhost:3000/assets/photos/small/202078-6343974077-capture2.png\",\n        \"description\": \"Neki opis 2\"\n    },\n    \"articleFeatures\": [\n        {\n            \"articleFeatureId\": 100,\n            \"articleId\": 64,\n            \"featureId\": 21,\n            \"value\": \"asddas\"\n        }\n    ],\n    \"features\": [\n        {\n            \"featureId\": 21,\n            \"name\": \"Duzina\",\n            \"categoryId\": 24\n        }\n    ],\n    \"photos\": [\n        {\n            \"photoId\": 49,\n            \"articleId\": 64,\n            \"imagePath\": \"202078-8478501166-slika2.jpg\"\n        }\n    ]\n}"
 						}
 					]
 				},
 				{
 					"name": "Edit a single article with editing features",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjExLCJ1c2VybmFtZSI6Im1pbG9zIiwiZXhwIjoxNTk3MTYxMDQyLjQyNSwiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjYuMyIsImlhdCI6MTU5NzE2MDc0Mn0.EIu_bZPS9SFCmxTRMRgqQ1zvuH_Du0PRNsSxus0cckY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Mindjuse\",\r\n    \"categoryId\": 1,\r\n    \"shortDescription\": \"kratak tekst test 2\",\r\n    \"description\": \"duze tekst test 2\",\r\n    \"price\": 499,\r\n    \"manufacturerId\":1,\r\n    \"materialId\": 1,\r\n\r\n    \"features\": [\r\n    \t{\r\n    \t\t\"featureId\": 2,\r\n    \t\t\"value\": \"150mm\"\r\n    \t},\r\n    \t\r\n    \t{\r\n    \t\t\"featureId\": 4,\r\n    \t\t\"value\": \"35cm\"\r\n    \t}\r\n\r\n    ]\r\n\r\n}",
+							"raw": "{\r\n    \"name\": \"Mindjuse\",\r\n    \"categoryId\": 24,\r\n    \"shortDescription\": \"kratak tekst test 2\",\r\n    \"description\": \"duze tekst test 2\",\r\n    \"price\": 499,\r\n\r\n    \"features\": [\r\n    \t{\r\n    \t\t\"featureId\": 21,\r\n    \t\t\"value\": \"150mm\"\r\n    \t}\r\n\r\n    ]\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1241,7 +1413,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/article/6/",
+							"raw": "http://localhost:3000/api/article/64/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1250,7 +1422,7 @@
 							"path": [
 								"api",
 								"article",
-								"6",
+								"64",
 								""
 							]
 						}
@@ -1263,7 +1435,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Mindjuse\",\r\n    \"categoryId\": 1,\r\n    \"shortDescription\": \"kratak tekst test 2\",\r\n    \"description\": \"duze tekst test 2\",\r\n    \"price\": 499,\r\n    \"manufacturerId\":1,\r\n    \"materialId\": 1,\r\n\r\n    \"features\": [\r\n    \t{\r\n    \t\t\"featureId\": 2,\r\n    \t\t\"value\": \"150mm\"\r\n    \t},\r\n    \t\r\n    \t{\r\n    \t\t\"featureId\": 4,\r\n    \t\t\"value\": \"35cm\"\r\n    \t}\r\n\r\n    ]\r\n\r\n}",
+									"raw": "{\r\n    \"name\": \"Mindjuse\",\r\n    \"categoryId\": 24,\r\n    \"shortDescription\": \"kratak tekst test 2\",\r\n    \"description\": \"duze tekst test 2\",\r\n    \"price\": 499,\r\n\r\n    \"features\": [\r\n    \t{\r\n    \t\t\"featureId\": 21,\r\n    \t\t\"value\": \"150mm\"\r\n    \t}\r\n\r\n    ]\r\n\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1271,7 +1443,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3000/api/article/6/",
+									"raw": "http://localhost:3000/api/article/64/",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1280,7 +1452,7 @@
 									"path": [
 										"api",
 										"article",
-										"6",
+										"64",
 										""
 									]
 								}
@@ -1294,20 +1466,24 @@
 									"value": "Express"
 								},
 								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
 									"key": "Content-Type",
 									"value": "application/json; charset=utf-8"
 								},
 								{
 									"key": "Content-Length",
-									"value": "648"
+									"value": "581"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"288-hiSSnurITvlskLV8l54AAgYbPss\""
+									"value": "W/\"245-+8DrrbVA2NOS6zzgFcGkAKghZiU\""
 								},
 								{
 									"key": "Date",
-									"value": "Sun, 17 May 2020 13:02:22 GMT"
+									"value": "Tue, 11 Aug 2020 15:45:55 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1315,11 +1491,118 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"articleId\": 6,\n    \"name\": \"Mindjuse\",\n    \"description\": \"duze tekst test 2\",\n    \"manufacturerId\": 1,\n    \"categoryId\": 1,\n    \"shortDescription\": \"kratak tekst test 2\",\n    \"materialId\": 1,\n    \"price\": \"499.00\",\n    \"createdAt\": \"2020-05-13T15:31:11.000Z\",\n    \"category\": {\n        \"categoryId\": 1,\n        \"name\": \"Ogrlice\",\n        \"imagePath\": \"assets/ogrlice.jpg\"\n    },\n    \"articleFeatures\": [\n        {\n            \"articleFeatureId\": 32,\n            \"articleId\": 6,\n            \"featureId\": 2,\n            \"value\": \"150mm\"\n        },\n        {\n            \"articleFeatureId\": 33,\n            \"articleId\": 6,\n            \"featureId\": 4,\n            \"value\": \"35cm\"\n        }\n    ],\n    \"features\": [\n        {\n            \"featureId\": 2,\n            \"name\": \"Duzina\",\n            \"categoryId\": 1\n        },\n        {\n            \"featureId\": 4,\n            \"name\": \"Obim\",\n            \"categoryId\": 1\n        }\n    ],\n    \"manufacturer\": {\n        \"manufacturerId\": 1,\n        \"name\": \"Guess\"\n    },\n    \"material\": {\n        \"materialId\": 1,\n        \"name\": \"Plastika\"\n    }\n}"
+							"body": "{\n    \"articleId\": 64,\n    \"name\": \"Mindjuse\",\n    \"description\": \"duze tekst test 2\",\n    \"categoryId\": 24,\n    \"shortDescription\": \"kratak tekst test 2\",\n    \"price\": \"499.00\",\n    \"createdAt\": \"2020-07-08T20:33:08.000Z\",\n    \"category\": {\n        \"categoryId\": 24,\n        \"name\": \"Narukvice\",\n        \"imagePath\": \"http://localhost:3000/assets/photos/small/202078-6343974077-capture2.png\",\n        \"description\": \"Neki opis 2\"\n    },\n    \"articleFeatures\": [\n        {\n            \"articleFeatureId\": 120,\n            \"articleId\": 64,\n            \"featureId\": 21,\n            \"value\": \"150mm\"\n        }\n    ],\n    \"features\": [\n        {\n            \"featureId\": 21,\n            \"name\": \"Duzina\",\n            \"categoryId\": 24\n        }\n    ],\n    \"photos\": [\n        {\n            \"photoId\": 49,\n            \"articleId\": 64,\n            \"imagePath\": \"202078-8478501166-slika2.jpg\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "POST sort articles",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryId\": 23,\r\n    \"orderBy\": \"price\",\r\n    \"orderDirection\": \"ASC\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/article/search/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"article",
+								"search",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "POST sort articles",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categoryId\": 23,\r\n    \"orderBy\": \"price\",\r\n    \"orderDirection\": \"ASC\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/article/search/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"article",
+										"search",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3344"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d10-ZrhpGYdKolb0fmz8psTm8NX8Kbg\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Aug 2020 15:56:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"articleId\": 59,\n        \"name\": \"Mindjuse TEST EDITA\",\n        \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed pharetra ligula. Nam elementum actor ullamcorper. Vivamus dui ligula, egestas ut dictum id, vestibulum sed lectus. Suspendisse vitae volutpat ex. Curabitur tempus malesuada velit, et feugiat elit mattis et. Phasellus id mattis est. Quisque semper euismod tortor a luctus\",\n        \"categoryId\": 23,\n        \"shortDescription\": \"Suspendisse imperdiet dui eu sapien cursus, ac eleifend lectus ullamcorper.\",\n        \"price\": \"11.00\",\n        \"createdAt\": \"2020-07-08T19:22:38.000Z\",\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 123,\n                \"articleId\": 59,\n                \"featureId\": 20,\n                \"value\": \"15cm\"\n            },\n            {\n                \"articleFeatureId\": 124,\n                \"articleId\": 59,\n                \"featureId\": 22,\n                \"value\": \"Jewelery factory\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 20,\n                \"name\": \"Obim\",\n                \"categoryId\": 23\n            },\n            {\n                \"featureId\": 22,\n                \"name\": \"Proizvodjac\",\n                \"categoryId\": 23\n            }\n        ],\n        \"photos\": [\n            {\n                \"photoId\": 71,\n                \"articleId\": 59,\n                \"imagePath\": \"202082-5758585841-dsc01660-100718329-large.jpg\"\n            },\n            {\n                \"photoId\": 72,\n                \"articleId\": 59,\n                \"imagePath\": \"202082-9531038567-cd3000-1_1.jpg\"\n            },\n            {\n                \"photoId\": 74,\n                \"articleId\": 59,\n                \"imagePath\": \"202082-5725984447-capture.png\"\n            }\n        ]\n    },\n    {\n        \"articleId\": 80,\n        \"name\": \"DUZINADUZINADUZINADUZINADUZINAasd\",\n        \"description\": \"DUZINADUZINADUZINADUZINAds\",\n        \"categoryId\": 23,\n        \"shortDescription\": \"DUZINADUZINADUZINADUZINADUZINA\",\n        \"price\": \"45.00\",\n        \"createdAt\": \"2020-07-09T11:21:38.000Z\",\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 105,\n                \"articleId\": 80,\n                \"featureId\": 20,\n                \"value\": \"6cm\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 20,\n                \"name\": \"Obim\",\n                \"categoryId\": 23\n            }\n        ],\n        \"photos\": [\n            {\n                \"photoId\": 60,\n                \"articleId\": 80,\n                \"imagePath\": \"202079-8662739838-slika2.jpg\"\n            }\n        ]\n    },\n    {\n        \"articleId\": 86,\n        \"name\": \"Novi nakit\",\n        \"description\": \"dugacak opis\",\n        \"categoryId\": 23,\n        \"shortDescription\": \"kratak opis\",\n        \"price\": \"200.00\",\n        \"createdAt\": \"2020-08-11T15:36:47.000Z\",\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 115,\n                \"articleId\": 86,\n                \"featureId\": 20,\n                \"value\": \"12cm\"\n            },\n            {\n                \"articleFeatureId\": 114,\n                \"articleId\": 86,\n                \"featureId\": 23,\n                \"value\": \"Novi proizvodjac\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 20,\n                \"name\": \"Obim\",\n                \"categoryId\": 23\n            },\n            {\n                \"featureId\": 23,\n                \"name\": \"sirina\",\n                \"categoryId\": 24\n            }\n        ],\n        \"photos\": [\n            {\n                \"photoId\": 76,\n                \"articleId\": 86,\n                \"imagePath\": \"asd.jpg\"\n            }\n        ]\n    },\n    {\n        \"articleId\": 63,\n        \"name\": \"asddasdasdasasd\",\n        \"description\": \"dasdasdasdas\",\n        \"categoryId\": 23,\n        \"shortDescription\": \"dasdasdasdasdas\",\n        \"price\": \"222.00\",\n        \"createdAt\": \"2020-07-08T19:36:03.000Z\",\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 89,\n                \"articleId\": 63,\n                \"featureId\": 20,\n                \"value\": \"12cm\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 20,\n                \"name\": \"Obim\",\n                \"categoryId\": 23\n            }\n        ],\n        \"photos\": [\n            {\n                \"photoId\": 48,\n                \"articleId\": 63,\n                \"imagePath\": \"202078-6343974077-capture2.png\"\n            }\n        ]\n    },\n    {\n        \"articleId\": 66,\n        \"name\": \"dfgdfsdfs5534534534\",\n        \"description\": \"dfgdfsdfs5534534534\",\n        \"categoryId\": 23,\n        \"shortDescription\": \"dfgdfsdfs5534534534\",\n        \"price\": \"343.00\",\n        \"createdAt\": \"2020-07-08T20:34:12.000Z\",\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 92,\n                \"articleId\": 66,\n                \"featureId\": 20,\n                \"value\": \"5cm\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 20,\n                \"name\": \"Obim\",\n                \"categoryId\": 23\n            }\n        ],\n        \"photos\": [\n            {\n                \"photoId\": 51,\n                \"articleId\": 66,\n                \"imagePath\": \"202078-3317591014-slika2.jpg\"\n            }\n        ]\n    },\n    {\n        \"articleId\": 82,\n        \"name\": \"NEKI NAMEEEENEKI NAMEEEE\",\n        \"description\": \"NEKI NAMEEEENEKI NAMEEEENEKI NAMEEEE\",\n        \"categoryId\": 23,\n        \"shortDescription\": \"NEKI NAMEEEENEKI NAMEEEE\",\n        \"price\": \"999999.00\",\n        \"createdAt\": \"2020-07-09T11:22:49.000Z\",\n        \"articleFeatures\": [],\n        \"features\": [],\n        \"photos\": [\n            {\n                \"photoId\": 61,\n                \"articleId\": 82,\n                \"imagePath\": \"202079-1834553716-slika2.jpg\"\n            },\n            {\n                \"photoId\": 75,\n                \"articleId\": 82,\n                \"imagePath\": \"2020810-1098287455-capture.png\"\n            }\n        ]\n    }\n]"
 						}
 					]
 				}
 			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjQsInVzZXJuYW1lIjoicHBlcmljMiIsImV4cCI6MTU5NTc2ODIyOC4wNjIsImlwIjoiOjoxIiwidWEiOiJQb3N0bWFuUnVudGltZS83LjI1LjAiLCJpYXQiOjE1OTMwODk4Mjh9.VtDemDW0HqX7V9Hmr6SnzlmkOm_R34lsHb4y9odsQBM",
+						"type": "string"
+					}
+				]
+			},
 			"event": [
 				{
 					"listen": "prerequest",
@@ -1360,7 +1643,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"username\": \"admin\",\n\t\"password\": \"admin\"\n}"
+							"raw": "{\n\t\"username\": \"milos\",\n\t\"password\": \"miscevic\"\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "http://localhost:3000/auth/login/",
@@ -1378,19 +1664,22 @@
 					},
 					"response": [
 						{
-							"name": "Login - when the administrator does not exist",
+							"name": "Administrator login wrong username",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
+										"type": "text",
+										"value": "application/json"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"username\": \"admin1\",\n\t\"password\": \"admin\"\n}"
+									"raw": "{\n\t\"username\": \"miloss\",\n\t\"password\": \"miscevic\"\n}",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "http://localhost:3000/auth/login/",
@@ -1413,6 +1702,10 @@
 								{
 									"key": "X-Powered-By",
 									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
 								},
 								{
 									"key": "Content-Type",
@@ -1428,7 +1721,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Thu, 14 May 2020 13:24:41 GMT"
+									"value": "Thu, 09 Jul 2020 13:28:27 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1439,19 +1732,22 @@
 							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -3001,\n    \"message\": null\n}"
 						},
 						{
-							"name": "Login - when the administrator exists and the password is correct",
+							"name": "Administrator login success",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
+										"type": "text",
+										"value": "application/json"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"username\": \"admin\",\n\t\"password\": \"admin\"\n}"
+									"raw": "{\n\t\"username\": \"milos\",\n\t\"password\": \"miscevic\"\n}",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "http://localhost:3000/auth/login/",
@@ -1474,6 +1770,10 @@
 								{
 									"key": "X-Powered-By",
 									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
 								},
 								{
 									"key": "Content-Type",
@@ -1481,15 +1781,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "290"
+									"value": "601"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"122-ObXOaD9C+3JGA015IO70/F8FMgA\""
+									"value": "W/\"259-1eErPXkNwhoN/A5sTixbSNcBV6g\""
 								},
 								{
 									"key": "Date",
-									"value": "Thu, 14 May 2020 13:20:58 GMT"
+									"value": "Thu, 09 Jul 2020 13:28:08 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1497,22 +1797,25 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"administratorId\": 8,\n    \"username\": \"admin\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjgsInVzZXJuYW1lIjoiYWRtaW4iLCJleHQiOjE1OTA2NzIwNTguNDg5LCJpcCI6Ijo6MSIsInVhIjoiUG9zdG1hblJ1bnRpbWUvNy4yNC4xIiwiaWF0IjoxNTg5NDYyNDU4fQ.dz_LEJXdTI8QZ5n83mOF-kL9nS_gpuTwOGmDSYtl7ts\"\n}"
+							"body": "{\n    \"administratorId\": 11,\n    \"username\": \"milos\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjExLCJ1c2VybmFtZSI6Im1pbG9zIiwiZXhwIjoxNTk0MzAxNTg4LjgyMywiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjYuMSIsImlhdCI6MTU5NDMwMTI4OH0.xmQyeGkq2M2ZSuv4AveNT2QwgTgbeNKc3FOUNxuwems\",\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjExLCJ1c2VybmFtZSI6Im1pbG9zIiwiZXhwIjoxNTk2OTc5Njg4LjgyNSwiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjYuMSIsImlhdCI6MTU5NDMwMTI4OH0.8fW4fFavs8UPIAeJTwV3SPq7s_KsXCLz5sWG5ar2mIE\",\n    \"refreshTokenExpiresAt\": \"2020-08-09T13:28:08.825Z\"\n}"
 						},
 						{
-							"name": "Login - when the administrator exists, but the password is not correct",
+							"name": "Administrator login wrong password",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
+										"type": "text",
+										"value": "application/json"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"username\": \"admin\",\n\t\"password\": \"admin1\"\n}"
+									"raw": "{\n\t\"username\": \"milos\",\n\t\"password\": \"miscevicc\"\n}",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "http://localhost:3000/auth/login/",
@@ -1535,6 +1838,10 @@
 								{
 									"key": "X-Powered-By",
 									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
 								},
 								{
 									"key": "Content-Type",
@@ -1550,7 +1857,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Thu, 14 May 2020 13:24:10 GMT"
+									"value": "Thu, 09 Jul 2020 13:28:54 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1559,6 +1866,101 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -3002,\n    \"message\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Refresh adminitrator token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjQsInVzZXJuYW1lIjoicHBlcmljMiIsImV4cCI6MTU5NTc2ODIyOC4wNjIsImlwIjoiOjoxIiwidWEiOiJQb3N0bWFuUnVudGltZS83LjI1LjAiLCJpYXQiOjE1OTMwODk4Mjh9.VtDemDW0HqX7V9Hmr6SnzlmkOm_R34lsHb4y9odsQBM\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/administrator/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"administrator",
+								"refresh"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Refresh adminitrator token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjQsInVzZXJuYW1lIjoicHBlcmljMiIsImV4cCI6MTU5NTc2ODIyOC4wNjIsImlwIjoiOjoxIiwidWEiOiJQb3N0bWFuUnVudGltZS83LjI1LjAiLCJpYXQiOjE1OTMwODk4Mjh9.VtDemDW0HqX7V9Hmr6SnzlmkOm_R34lsHb4y9odsQBM\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/administrator/refresh",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"administrator",
+										"refresh"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "604"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"25c-zwI8+G5z4/Yx3rDXgeYphHTSrIU\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jun 2020 13:12:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"administratorId\": 4,\n    \"username\": \"pperic2\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjQsInVzZXJuYW1lIjoicHBlcmljMiIsImV4cCI6MTU5MzA5MTAyMS43MjksImlwIjoiOjoxIiwidWEiOiJQb3N0bWFuUnVudGltZS83LjI1LjAiLCJpYXQiOjE1OTMwOTA3MjF9.hF3VHdcIKUWxier_nC7lxm7UX7aWtS_drveltvEUtjM\",\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjQsInVzZXJuYW1lIjoicHBlcmljMiIsImV4cCI6MTU5NTc2ODIyOC4wNjIsImlwIjoiOjoxIiwidWEiOiJQb3N0bWFuUnVudGltZS83LjI1LjAiLCJpYXQiOjE1OTMwODk4Mjh9.VtDemDW0HqX7V9Hmr6SnzlmkOm_R34lsHb4y9odsQBM\",\n    \"refreshTokenExpiresAt\": \"2020-07-26T12:57:08.062Z\"\n}"
 						}
 					]
 				}
@@ -1688,57 +2090,6 @@
 					},
 					"response": [
 						{
-							"name": "Get all features",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:3000/api/feature/",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"api",
-										"feature",
-										""
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "372"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"174-wSbKmhDAnlqhMblEwn05/NDol2E\""
-								},
-								{
-									"key": "Date",
-									"value": "Sat, 16 May 2020 14:38:04 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								}
-							],
-							"cookie": [],
-							"body": "[\n    {\n        \"featureId\": 1,\n        \"name\": \"Boja\",\n        \"categoryId\": 1,\n        \"category\": {\n            \"categoryId\": 1,\n            \"name\": \"Ogrlice\",\n            \"imagePath\": \"assets/ogrlice.jpg\"\n        }\n    },\n    {\n        \"featureId\": 2,\n        \"name\": \"Duzina\",\n        \"categoryId\": 1,\n        \"category\": {\n            \"categoryId\": 1,\n            \"name\": \"Ogrlice\",\n            \"imagePath\": \"assets/ogrlice.jpg\"\n        }\n    },\n    {\n        \"featureId\": 4,\n        \"name\": \"Obim\",\n        \"categoryId\": 1,\n        \"category\": {\n            \"categoryId\": 1,\n            \"name\": \"Ogrlice\",\n            \"imagePath\": \"assets/ogrlice.jpg\"\n        }\n    }\n]"
-						},
-						{
 							"name": "Get a single feature",
 							"originalRequest": {
 								"method": "GET",
@@ -1789,6 +2140,85 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"featureId\": 1,\n    \"name\": \"Boja\",\n    \"categoryId\": 1,\n    \"category\": {\n        \"categoryId\": 1,\n        \"name\": \"Ogrlice\",\n        \"imagePath\": \"assets/ogrlice.jpg\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get a single non existing feature",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/feature/111/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"feature",
+								"111",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get a single non existing feature",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/feature/111/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"feature",
+										"111",
+										""
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"44-DdQxjYvvk53fQOrw0ZFXdbQT2+A\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Aug 2020 15:33:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Feature not found\",\n    \"error\": \"Not Found\"\n}"
 						}
 					]
 				},
@@ -1975,6 +2405,158 @@
 							"body": "{\n    \"featureId\": 5,\n    \"name\": \"Novi feature editovan\",\n    \"categoryId\": 2,\n    \"category\": {\n        \"categoryId\": 2,\n        \"name\": \"Narukvice\",\n        \"imagePath\": \"assets/narukvice.jpg\"\n    }\n}"
 						}
 					]
+				},
+				{
+					"name": "Get distinct values for features of a single category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/feature/values/23/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"feature",
+								"values",
+								"23",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get distinct values for features of a single category",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/feature/values/23/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"feature",
+										"values",
+										"23",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "150"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"96-rUSJoUwnNO6oBb9GQwC5qYBGPss\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Aug 2020 15:12:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"features\": [\n        {\n            \"featureId\": 20,\n            \"name\": \"Obim\",\n            \"values\": [\n                \"12cm\",\n                \"15cm\",\n                \"5cm\",\n                \"6cm\"\n            ]\n        },\n        {\n            \"featureId\": 22,\n            \"name\": \"Proizvodjac\",\n            \"values\": [\n                \"Jewelery factory\"\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "DELETE feature",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/feature/24/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"feature",
+								"24",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "DELETE feature",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/feature/24/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"feature",
+										"24",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Aug 2020 15:29:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
 				}
 			],
 			"event": [
@@ -2000,6 +2582,1052 @@
 				}
 			],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "GET all categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/category/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET all categories",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/category/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"category",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "543"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21f-NHUh/lhtntAduSq5fdB9YRA+RNs\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Aug 2020 15:17:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"categoryId\": 23,\n        \"name\": \"Ogrlice23\",\n        \"imagePath\": \"https://www.nationalgeographic.rs/files/images/2019/03/mesec_snimljen_aps_671315071.jpg\",\n        \"description\": \"Neki opis\",\n        \"features\": [\n            {\n                \"featureId\": 20,\n                \"name\": \"Obim\",\n                \"categoryId\": 23\n            },\n            {\n                \"featureId\": 22,\n                \"name\": \"Proizvodjac\",\n                \"categoryId\": 23\n            }\n        ]\n    },\n    {\n        \"categoryId\": 24,\n        \"name\": \"Narukvice\",\n        \"imagePath\": \"http://localhost:3000/assets/photos/small/202078-6343974077-capture2.png\",\n        \"description\": \"Neki opis 2\",\n        \"features\": [\n            {\n                \"featureId\": 21,\n                \"name\": \"Duzina\",\n                \"categoryId\": 24\n            },\n            {\n                \"featureId\": 23,\n                \"name\": \"sirina\",\n                \"categoryId\": 24\n            }\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "GET a single category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/category/23/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category",
+								"23",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET a single category",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/category/23/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"category",
+										"23",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "278"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"116-YoJJ3VeLWO/HGDMbgLUJiioLFeI\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Aug 2020 15:18:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"categoryId\": 23,\n    \"name\": \"Ogrlice23\",\n    \"imagePath\": \"https://www.nationalgeographic.rs/files/images/2019/03/mesec_snimljen_aps_671315071.jpg\",\n    \"description\": \"Neki opis\",\n    \"features\": [\n        {\n            \"featureId\": 20,\n            \"name\": \"Obim\",\n            \"categoryId\": 23\n        },\n        {\n            \"featureId\": 22,\n            \"name\": \"Proizvodjac\",\n            \"categoryId\": 23\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "GET a non existing category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/category/223/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category",
+								"223",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET a non existing category",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/category/223/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"category",
+										"223",
+										""
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "69"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"45-r7E4Wl/9RQMuIZkVlEWottXhBA4\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Aug 2020 15:30:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Category not found\",\n    \"error\": \"Not Found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "PATCH edit a single category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjExLCJ1c2VybmFtZSI6Im1pbG9zIiwiZXhwIjoxNTk3MTU5NTc0LjE4NSwiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjYuMyIsImlhdCI6MTU5NzE1OTI3NH0.TbsH5r-yoWG_bWkPL22QOCtoJR5QlZmm-MQDHDzELhA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"Ogrlice izmenjene\",\r\n    \"imagePath\": \"https://slika.jpg\",\r\n\t\"description\": \"Izmenjen opis\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/category/23/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category",
+								"23",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "PATCH edit a single category",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"name\": \"Ogrlice izmenjene\",\r\n    \"imagePath\": \"https://slika.jpg\",\r\n\t\"description\": \"Izmenjen opis\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/category/23/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"category",
+										"23",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Aug 2020 15:23:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "POST add a category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjExLCJ1c2VybmFtZSI6Im1pbG9zIiwiZXhwIjoxNTk3MTU5NTc0LjE4NSwiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjYuMyIsImlhdCI6MTU5NzE1OTI3NH0.TbsH5r-yoWG_bWkPL22QOCtoJR5QlZmm-MQDHDzELhA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"Nova kategorija\",\r\n    \"imagePath\": \"http://novaSlika.jpg\",\r\n\t\"description\": \"Opis nove kategorije\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/category/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "POST add a category",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"name\": \"Nova kategorija\",\r\n    \"imagePath\": \"http://novaSlika.jpg\",\r\n\t\"description\": \"Opis nove kategorije\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/category/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"category",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "114"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"72-ANCvdY2NeKon5i6lsve+N/KZOSs\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Aug 2020 15:25:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"categoryId\": 27,\n    \"name\": \"Nova kategorija\",\n    \"imagePath\": \"http://novaSlika.jpg\",\n    \"description\": \"Opis nove kategorije\"\n}"
+						}
+					]
+				},
+				{
+					"name": "DELETE category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/category/27/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category",
+								"27",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "DELETE category",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/category/27/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"category",
+										"27",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Aug 2020 15:26:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "PATCH edit a non existing category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjExLCJ1c2VybmFtZSI6Im1pbG9zIiwiZXhwIjoxNTk3MTYwMTUzLjA1MywiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjYuMyIsImlhdCI6MTU5NzE1OTg1M30.2JYgFXMvEp3HGSDWamCIPFWmGXrbcROiJeU5HdsWMdY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"Ogrlice izmenjene\",\r\n    \"imagePath\": \"https://slika.jpg\",\r\n\t\"description\": \"Izmenjen opis\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/category/2322/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category",
+								"2322",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "PATCH edit a non existing category",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"name\": \"Ogrlice izmenjene\",\r\n    \"imagePath\": \"https://slika.jpg\",\r\n\t\"description\": \"Izmenjen opis\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/category/2322/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"category",
+										"2322",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "69"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"45-HhGwkIxsPMPahE/tABaR4sAH4Mg\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Aug 2020 15:32:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -3001,\n    \"message\": \"Category not found!\"\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Get current cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/cart/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cart",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get current cart",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/cart/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"cart",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "70"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"46-tjhXdRgsN+Z+86zBkbBJ5adE5Sw\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Aug 2020 16:05:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"cartId\": 85,\n    \"createdAt\": \"2020-08-02T12:00:50.000Z\",\n    \"cartArticles\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Add article to cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"articleId\": 86,\r\n\t\"quantity\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/cart/addToCart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cart",
+								"addToCart"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add article to cart",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"articleId\": 86,\r\n\t\"quantity\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/cart/addToCart",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"cart",
+										"addToCart"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "430"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ae-VvyafndjL3jgMyBynY1RjGXK6aw\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Aug 2020 16:09:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"cartId\": 85,\n    \"createdAt\": \"2020-08-02T12:00:50.000Z\",\n    \"cartArticles\": [\n        {\n            \"cartArticleId\": 127,\n            \"cartId\": 85,\n            \"articleId\": 86,\n            \"quantity\": 2,\n            \"article\": {\n                \"articleId\": 86,\n                \"name\": \"Novi nakit\",\n                \"description\": \"dugacak opis\",\n                \"categoryId\": 23,\n                \"shortDescription\": \"kratak opis\",\n                \"price\": \"200.00\",\n                \"createdAt\": \"2020-08-11T15:36:47.000Z\",\n                \"category\": {\n                    \"categoryId\": 23,\n                    \"name\": \"Ogrlice izmenjene\",\n                    \"imagePath\": \"https://slika.jpg\",\n                    \"description\": \"Izmenjen opis\"\n                }\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit article quantity",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"articleId\": 86,\r\n\t\"quantity\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/cart/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cart",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add article to cart",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"articleId\": 86,\r\n\t\"quantity\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/cart/addToCart",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"cart",
+										"addToCart"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "430"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ae-VvyafndjL3jgMyBynY1RjGXK6aw\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Aug 2020 16:09:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"cartId\": 85,\n    \"createdAt\": \"2020-08-02T12:00:50.000Z\",\n    \"cartArticles\": [\n        {\n            \"cartArticleId\": 127,\n            \"cartId\": 85,\n            \"articleId\": 86,\n            \"quantity\": 2,\n            \"article\": {\n                \"articleId\": 86,\n                \"name\": \"Novi nakit\",\n                \"description\": \"dugacak opis\",\n                \"categoryId\": 23,\n                \"shortDescription\": \"kratak opis\",\n                \"price\": \"200.00\",\n                \"createdAt\": \"2020-08-11T15:36:47.000Z\",\n                \"category\": {\n                    \"categoryId\": 23,\n                    \"name\": \"Ogrlice izmenjene\",\n                    \"imagePath\": \"https://slika.jpg\",\n                    \"description\": \"Izmenjen opis\"\n                }\n            }\n        }\n    ]\n}"
+						},
+						{
+							"name": "Edit article quantity",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"articleId\": 86,\r\n\t\"quantity\": 5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/cart/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"cart",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "430"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ae-nkz/LrfPDiseqMPxwy4GuiJnH08\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Aug 2020 16:10:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"cartId\": 85,\n    \"createdAt\": \"2020-08-02T12:00:50.000Z\",\n    \"cartArticles\": [\n        {\n            \"cartArticleId\": 127,\n            \"cartId\": 85,\n            \"articleId\": 86,\n            \"quantity\": 5,\n            \"article\": {\n                \"articleId\": 86,\n                \"name\": \"Novi nakit\",\n                \"description\": \"dugacak opis\",\n                \"categoryId\": 23,\n                \"shortDescription\": \"kratak opis\",\n                \"price\": \"200.00\",\n                \"createdAt\": \"2020-08-11T15:36:47.000Z\",\n                \"category\": {\n                    \"categoryId\": 23,\n                    \"name\": \"Ogrlice izmenjene\",\n                    \"imagePath\": \"https://slika.jpg\",\n                    \"description\": \"Izmenjen opis\"\n                }\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Make an order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"milos\",\r\n    \"surname\": \"miscevic\",\r\n    \"email\": \"milos.miscevic@yahoo.com\",\r\n    \"address\": \"danijelova 32\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/cart/makeOrder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cart",
+								"makeOrder"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Make an order",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"milos\",\r\n    \"surname\": \"miscevic\",\r\n    \"email\": \"milos.miscevic@yahoo.com\",\r\n    \"address\": \"danijelova 32\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/cart/makeOrder",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"cart",
+										"makeOrder"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "600"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"258-y959cEA/z01R4McW9GXPSXUJblA\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Aug 2020 16:16:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"orderId\": 69,\n    \"createdAt\": \"2020-08-11T16:16:52.000Z\",\n    \"cartId\": 86,\n    \"name\": \"milos\",\n    \"surname\": \"miscevic\",\n    \"email\": \"milos.miscevic@yahoo.com\",\n    \"address\": \"danijelova 32\",\n    \"cart\": {\n        \"cartId\": 86,\n        \"createdAt\": \"2020-08-11T16:16:52.000Z\",\n        \"cartArticles\": [\n            {\n                \"cartArticleId\": 128,\n                \"cartId\": 86,\n                \"articleId\": 86,\n                \"quantity\": 2,\n                \"article\": {\n                    \"articleId\": 86,\n                    \"name\": \"Novi nakit\",\n                    \"description\": \"dugacak opis\",\n                    \"categoryId\": 23,\n                    \"shortDescription\": \"kratak opis\",\n                    \"price\": \"200.00\",\n                    \"createdAt\": \"2020-08-11T15:36:47.000Z\",\n                    \"category\": {\n                        \"categoryId\": 23,\n                        \"name\": \"Ogrlice izmenjene\",\n                        \"imagePath\": \"https://slika.jpg\",\n                        \"description\": \"Izmenjen opis\"\n                    }\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"auth": {
@@ -2007,7 +3635,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjgsInVzZXJuYW1lIjoiYWRtaW4iLCJleHAiOjE1OTA4NDQ4NjQuNjc2LCJpcCI6Ijo6MSIsInVhIjoiUG9zdG1hblJ1bnRpbWUvNy4yNC4xIiwiaWF0IjoxNTg5NjM1MjY0fQ.isA1xzKYxTrjg764iTurBywgHjmELyPgRLYs4cZC0Gs",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjExLCJ1c2VybmFtZSI6Im1pbG9zIiwiZXhwIjoxNTk3MTYwODA0LjA5NywiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjYuMyIsImlhdCI6MTU5NzE2MDUwNH0.Vc_XgaY623p7LOKH1pv8_2QU4VoSzczoDCnoALrZLWE",
 				"type": "string"
 			}
 		]
